@@ -1,6 +1,5 @@
 # VVS-Music
-
-https://travis-ci.org/heishiro-slash/VVS-Music.svg?branch=master
+![alt tag](https://travis-ci.org/heishiro-slash/VVS-Music.svg?branch=master)
 
 Enunciado de la p1:
 
@@ -9,6 +8,8 @@ O proxecto debe desenvolverse en GitHub e este integrarse con Travis-CI desde o 
 
 Cada equipo recibirá puntos, o martes 10 de novembro, en función dos seguintes criterios:
 
-uso do repositorio por parte dos diferentes compoñentes do equipo
-calidade do traballo realizado (estilo, estruturación, documentación)
-execución exitosa do contido do repositorio en Travis
+- Uso do repositorio por parte dos diferentes compoñentes do equipo
+- Calidade do traballo realizado (estilo, estruturación, documentación)
+- Execución exitosa do contido do repositorio en Travis
+
+
