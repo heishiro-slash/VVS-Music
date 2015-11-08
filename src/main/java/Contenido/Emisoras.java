@@ -5,6 +5,7 @@
  */
 package Contenido;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,9 +14,17 @@ import java.util.List;
  */
 public class Emisoras implements Contenido {
 
+    private List<Contenido> lista;
+    private String titulo;
+
+    public Emisoras(String tit) {
+        this.titulo = tit;
+        this.lista = new ArrayList();
+    }
+
     @Override
     public String obtenerTitulo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.titulo;
     }
 
     @Override
@@ -25,22 +34,39 @@ public class Emisoras implements Contenido {
 
     @Override
     public List<Contenido> obtenerListaReproduccion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.lista;
     }
 
     @Override
-    public List<Contenido> buscar(String subcadena) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException{
+        
+        List<Contenido> listaContenido = new ArrayList() ;
+        int indice= lista.indexOf(subcadena);
+        if (indice != -1) {
+            Contenido c = lista.get(indice);
+            listaContenido.add(c);
+            return listaContenido;
+        } else {
+            throw new TitleNotFoundException("Contenido no encontrada en la emisora");
+        }
     }
 
     @Override
-    public void agregar(Contenido contenido, Contenido predecesor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void agregar(Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException{
+        int indice = lista.indexOf(predecesor);
+        if (indice != -1){
+         lista.add(indice++, contenido);   
+        }else {
+            throw new ContentEmisoraNotFoundException("Predecesor no encontrado ");
+        }
+        
     }
 
     @Override
-    public void eliminar(Contenido contenido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void eliminar(Contenido contenido) throws ContentEmisoraNotFoundException {
+        if(!lista.remove(contenido)){
+            throw new ContentEmisoraNotFoundException("No se ha podido eliminar el contenido");
+        }
     }
-    
+
 }

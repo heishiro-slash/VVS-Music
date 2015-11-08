@@ -5,6 +5,7 @@
  */
 package Contenido;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,25 +13,42 @@ import java.util.List;
  * @author José Miguel
  */
 public class Canciones  implements Contenido{
-
+    
+    private String titulo;
+    private int duracion;
+    private List<Contenido> lista;
+    
+    public Canciones(String tit,int dur) {
+        this.titulo=tit;
+        this.duracion=dur;
+        this.lista = new ArrayList();
+    }
+    
+    
     @Override
     public String obtenerTitulo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          return this.titulo;
     }
 
     @Override
     public int obtenerDuracion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.duracion;
     }
 
     @Override
     public List<Contenido> obtenerListaReproduccion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        lista.add(new Canciones(titulo,duracion));
+        return lista;
     }
 
     @Override
-    public List<Contenido> buscar(String subcadena) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
+        if (this.titulo.contains(subcadena)){
+            lista.add(new Canciones(titulo,duracion)); 
+            return lista;
+        }else {
+           throw new TitleNotFoundException("Cancion no encontrada");
+        }
     }
 
     @Override  //Esto es un metodo vacio
