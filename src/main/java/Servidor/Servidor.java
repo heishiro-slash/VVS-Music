@@ -5,7 +5,11 @@
  */
 package Servidor;
 
+import Servidor.Utils.Token;
 import Contenido.Contenido;
+import Servidor.Utils.ContentNotFoundException;
+import Servidor.Utils.InvalidTokenException;
+import java.util.List;
 
 /**
  *
@@ -13,9 +17,9 @@ import Contenido.Contenido;
  */
 public interface Servidor {
     public String obtenerNombre();
-    public String alta(); //Devuelve un token, podemos formarlo con un timestamp now y el nombre de usuario
-    public void baja(String token);
-    public void agregar (Contenido contenido, String token);
-    public void eliminar (Contenido contenido, String token);
-    public void buscar (String subcadena, String token);
+    public Token alta(); //Devuelve un token, podemos formarlo con un timestamp now y el nombre de usuario
+    public void baja(Token token) throws InvalidTokenException;
+    public void agregar (Contenido contenido, Token token) throws InvalidTokenException;
+    public void eliminar (Contenido contenido, Token token) throws InvalidTokenException, ContentNotFoundException;
+    public List<Contenido> buscar (String subcadena, Token token) throws InvalidTokenException;
 }
