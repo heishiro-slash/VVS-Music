@@ -5,32 +5,49 @@
  */
 package Contenido;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author José Miguel
  */
-public class Anuncios  implements Contenido{
+public class Anuncios implements Contenido {
+
+    private int duracion;
+    private String titulo;
+    private List<Contenido> lista;
+
+    public Anuncios() {
+        this.duracion = 5;
+        this.titulo = "PUBLICIDAD";
+        this.lista = new ArrayList();
+    }
 
     @Override
     public String obtenerTitulo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.titulo;
     }
 
     @Override
     public int obtenerDuracion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.duracion;
     }
 
     @Override
     public List<Contenido> obtenerListaReproduccion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        lista.add(new Anuncios());
+        return lista;
     }
 
     @Override
-    public List<Contenido> buscar(String subcadena) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException { 
+        if (this.titulo.contains(subcadena)) {
+            lista.add(new Canciones(titulo, duracion));
+            return lista;
+        } else {
+            throw new TitleNotFoundException("Anuncio no encontrado");
+        }
     }
 
     @Override  //Esto es un metodo vacio
@@ -42,5 +59,5 @@ public class Anuncios  implements Contenido{
     public void eliminar(Contenido contenido) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
