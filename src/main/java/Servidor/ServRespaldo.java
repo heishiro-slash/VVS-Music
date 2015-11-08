@@ -6,41 +6,35 @@
 package Servidor;
 
 import Contenido.Contenido;
+import Servidor.Utils.InvalidTokenException;
+import Servidor.Utils.Token;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author José Miguel
  */
-public class ServRespaldo implements Servidor{
+public class ServRespaldo extends ServLocal {
 
-    @Override
-    public String obtenerNombre() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private ServRespaldo respaldo;
+    private List<Token> validTokens = new ArrayList();
+
+    public ServRespaldo(String nombre) {
+        super(nombre);
+    }
+
+    public void setServRespaldo(ServRespaldo respaldo) {
+        this.respaldo = respaldo;
     }
 
     @Override
-    public String alta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException {
+        List<Contenido> lista = super.buscar(subcadena, token);
+        if(lista.size()==0){
+            lista = respaldo.buscar(subcadena, token);
+        }
+        return lista;
     }
 
-    @Override
-    public void baja(String token) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void agregar(Contenido contenido, String token) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void eliminar(Contenido contenido, String token) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void buscar(String subcadena, String token) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
