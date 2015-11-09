@@ -40,35 +40,49 @@ public class Emisoras implements Contenido {
     }
 
     @Override
-    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException{
+    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
+
+        List<Contenido> listaContenido = new ArrayList();
         
-        List<Contenido> listaContenido = new ArrayList() ;
-        int indice= lista.indexOf(subcadena);
-        if (indice != -1) {
-            Contenido c = lista.get(indice);
-            listaContenido.add(c);
-            return listaContenido;
-        } else {
-            throw new TitleNotFoundException("Contenido no encontrada en la emisora");
+        for (Contenido contenido : lista) {
+            if (contenido.obtenerTitulo().contains(subcadena)) {
+                listaContenido.add(contenido);
+            }
+
         }
+
+        if (listaContenido.isEmpty()) { // si no ha encontrado ninguna coincidencia
+            throw new TitleNotFoundException("No se han econtrado coincidencias en la emisora");
+        }
+        return listaContenido;
     }
 
     @Override
-    public void agregar(Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException{
-        int indice = lista.indexOf(predecesor);
-        if (indice != -1){
-         duracion = duracion + contenido.obtenerDuracion();
-         lista.add(indice++, contenido);   
-        }else {
+    public void agregar(Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException {
+        int indice;
+
+        if (lista.isEmpty()) {
+            lista.add(contenido);
+        } else {
+            if (predecesor == null) {
+                throw new ContentEmisoraNotFoundException("Falta Predecesor");
+            }
+        }
+
+        indice = lista.indexOf(predecesor);
+        if (indice != -1) {
+            duracion = duracion + contenido.obtenerDuracion();
+            lista.add(indice++, contenido);
+        } else {
             throw new ContentEmisoraNotFoundException("Predecesor no encontrado ");
         }
-        
+
     }
 
     @Override
     public void eliminar(Contenido contenido) throws ContentEmisoraNotFoundException {
-        if(lista.remove(contenido)){
-            duracion=duracion - contenido.obtenerDuracion();
+        if (lista.remove(contenido)) {
+            duracion = duracion - contenido.obtenerDuracion();
         } else {
             throw new ContentEmisoraNotFoundException("No se ha podido eliminar el contenido");
         }
