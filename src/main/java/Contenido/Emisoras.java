@@ -16,9 +16,11 @@ public class Emisoras implements Contenido {
 
     private List<Contenido> lista;
     private String titulo;
+    private int duracion;
 
     public Emisoras(String tit) {
         this.titulo = tit;
+        this.duracion = 0;
         this.lista = new ArrayList();
     }
 
@@ -29,7 +31,7 @@ public class Emisoras implements Contenido {
 
     @Override
     public int obtenerDuracion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.duracion;
     }
 
     @Override
@@ -55,6 +57,7 @@ public class Emisoras implements Contenido {
     public void agregar(Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException{
         int indice = lista.indexOf(predecesor);
         if (indice != -1){
+         duracion = duracion + contenido.obtenerDuracion();
          lista.add(indice++, contenido);   
         }else {
             throw new ContentEmisoraNotFoundException("Predecesor no encontrado ");
@@ -64,7 +67,9 @@ public class Emisoras implements Contenido {
 
     @Override
     public void eliminar(Contenido contenido) throws ContentEmisoraNotFoundException {
-        if(!lista.remove(contenido)){
+        if(lista.remove(contenido)){
+            duracion=duracion - contenido.obtenerDuracion();
+        } else {
             throw new ContentEmisoraNotFoundException("No se ha podido eliminar el contenido");
         }
     }
