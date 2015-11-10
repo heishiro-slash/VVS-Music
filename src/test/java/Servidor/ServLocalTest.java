@@ -5,7 +5,10 @@
  */
 package Servidor;
 
+import Contenido.Anuncios;
 import Contenido.Contenido;
+import Servidor.Utils.AdminToken;
+import Servidor.Utils.InvalidTokenException;
 import Servidor.Utils.Token;
 import java.util.List;
 import org.junit.After;
@@ -39,59 +42,66 @@ public class ServLocalTest {
 
     /**
      * Test of obtenerNombre method, of class ServLocal.
-//     */
-//    @Test
-//    public void testObtenerNombre() {
-//        System.out.println("obtenerNombre");
-//        ServLocal instance = null;
-//        String expResult = "";
-//        String result = instance.obtenerNombre();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of alta method, of class ServLocal.
-//     */
-//    @Test
-//    public void testAlta() {
-//        System.out.println("alta");
-//        ServLocal instance = null;
-//        Token expResult = null;
-//        Token result = instance.alta();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of baja method, of class ServLocal.
-//     */
-//    @Test
-//    public void testBaja() throws Exception {
-//        System.out.println("baja");
-//        Token token = null;
-//        ServLocal instance = null;
-////        instance.baja(token);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of agregar method, of class ServLocal.
-//     */
+     */
+    @Test
+    public void testObtenerNombre() {
+        ServLocal servidor = new ServLocal("Paquito 1");
+        
+        String nombre = servidor.obtenerNombre();
+        
+        assertEquals( nombre, "Paquito 1");
+      
+    }
+
+    /**
+     * Test of alta method, of class ServLocal.
+     */
+    @Test
+    public void testAlta() {
+        ServLocal servidor = new ServLocal("Paquito 1");
+        Token token = servidor.alta();
+        
+        token.use();;
+    }
+    
+   
+    /**
+     * Test of baja method, of class ServLocal.
+     */
+    
+    @Test
+    public void testBaja() throws InvalidTokenException {
+        
+        ServLocal servidor = new ServLocal("Paquito 1");
+        Token token = servidor.alta();
+        servidor.baja(token);
+
+    }
+    @Test(expected = InvalidTokenException.class)
+    public void testBajaError() throws InvalidTokenException {
+        
+        ServLocal servidor = new ServLocal("Paquito 1");
+        Token token = servidor.alta();
+        servidor.baja(token);
+        servidor.baja(token);
+
+    }
+
+    /**
+     * Test of agregar method, of class ServLocal.
+     */
 //    @Test
 //    public void testAgregar() throws Exception {
-//        System.out.println("agregar");
-//        Contenido contenido = null;
-//        Token token = null;
-//        ServLocal instance = null;
-////        instance.agregar(contenido, token);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
+//        ServLocal servidor = new ServLocal("Paquito 1");
+//        AdminToken admin = AdminToken.getInstance();
+//        Token token =  servidor.alta();
+//        Contenido contenido = new Anuncios();
+//      
+//        servidor.agregar(contenido, admin);
+//        List<Contenido> lista = servidor.buscar("PUB", token);
+//        assertEquals (lista.size(), 1);
 //    }
-//
+////
 //    /**
 //     * Test of eliminar method, of class ServLocal.
 //     */
@@ -101,9 +111,9 @@ public class ServLocalTest {
 //        Contenido contenido = null;
 //        Token token = null;
 //        ServLocal instance = null;
-////        instance.eliminar(contenido, token);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
+//        instance.eliminar(contenido, token);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
 //    }
 //
 //    /**
@@ -117,9 +127,9 @@ public class ServLocalTest {
 //        ServLocal instance = null;
 //        List<Contenido> expResult = null;
 //        List<Contenido> result = instance.buscar(subcadena, token);
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
 //    }
-    
+
 }
