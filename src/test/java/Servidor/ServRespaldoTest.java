@@ -40,30 +40,31 @@ public class ServRespaldoTest {
     /**
      * Test of setServRespaldo method, of class ServRespaldo.
      */
-//    @Test
-//    public void testSetServRespaldo() {
-//        System.out.println("setServRespaldo");
-//        ServRespaldo respaldo = null;
-//        ServRespaldo instance = null;
-//        instance.setServRespaldo(respaldo);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of buscar method, of class ServRespaldo.
-//     */
-//    @Test
-//    public void testBuscar() throws Exception {
-//        System.out.println("buscar");
-//        String subcadena = "";
-//        Token token = null;
-//        ServRespaldo instance = null;
-//        List<Contenido> expResult = null;
-//        List<Contenido> result = instance.buscar(subcadena, token);
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-    
+    @Test
+    public void testSetServRespaldo() {
+        ServRespaldo servidor = new ServRespaldo("Torre");
+        servidor.setServRespaldo(servidor);
+        
+        String nombre = servidor.obtenerNombre();
+        
+        assertEquals(nombre, "Torre");
+
+    }
+
+    /**
+     * Test of buscar method, of class ServRespaldo.
+     */
+    @Test
+    public void testBuscar() throws Exception {
+        System.out.println("buscar");
+        String subcadena = "";
+        Token token = null;
+        ServRespaldo instance = null;
+        List<Contenido> expResult = null;
+        List<Contenido> result = instance.buscar(subcadena, token);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
 }

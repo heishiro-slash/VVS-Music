@@ -21,7 +21,7 @@ public class Token {
         uuid = UUID.randomUUID().toString();
     }
     public int use(){
-        caducidad = caducidad --;
+        caducidad = -- caducidad ;
         return caducidad;
     }
 
