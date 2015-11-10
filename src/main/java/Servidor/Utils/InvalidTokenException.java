@@ -11,10 +11,10 @@ package Servidor.Utils;
  */
 public class InvalidTokenException extends Exception {
 
-    Token token;
-
     public InvalidTokenException(Token token) {
-        this.token = token;
+        System.out.println("Token caducado o inválido: " + token.toString());
+    }
+    public InvalidTokenException(AdminToken token) {
         System.out.println("Token caducado o inválido: " + token.toString());
     }
 

@@ -44,4 +44,10 @@ public class AdminToken {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "AdminToken{" + uuid + '}';
+    }
+    
 }
