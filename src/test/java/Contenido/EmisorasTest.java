@@ -5,6 +5,7 @@
  */
 package Contenido;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -40,86 +41,192 @@ public class EmisorasTest {
 
     /**
      * Test of obtenerTitulo method, of class Emisoras.
-//     */
-//    @Test
-//    public void testObtenerTitulo() {
-//        System.out.println("obtenerTitulo");
-//        Emisoras instance = null;
-//        String expResult = "";
-//        String result = instance.obtenerTitulo();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of obtenerDuracion method, of class Emisoras.
-//     */
-//    @Test
-//    public void testObtenerDuracion() {
-//        System.out.println("obtenerDuracion");
-//        Emisoras instance = null;
-//        int expResult = 0;
-//        int result = instance.obtenerDuracion();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of obtenerListaReproduccion method, of class Emisoras.
-//     */
-//    @Test
-//    public void testObtenerListaReproduccion() {
-//        System.out.println("obtenerListaReproduccion");
-//        Emisoras instance = null;
-//        List<Contenido> expResult = null;
-//        List<Contenido> result = instance.obtenerListaReproduccion();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of buscar method, of class Emisoras.
-//     */
-//    @Test
-//    public void testBuscar() throws Exception {
-//        System.out.println("buscar");
-//        String subcadena = "";
-//        Emisoras instance = null;
-//        List<Contenido> expResult = null;
-//        List<Contenido> result = instance.buscar(subcadena);
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of agregar method, of class Emisoras.
-//     */
-//    @Test
-//    public void testAgregar() throws Exception {
-//        System.out.println("agregar");
-//        Contenido contenido = null;
-//        Contenido predecesor = null;
-//        Emisoras instance = null;
-////        instance.agregar(contenido, predecesor);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of eliminar method, of class Emisoras.
-//     */
-//    @Test
-//    public void testEliminar() throws Exception {
-//        System.out.println("eliminar");
-//        Contenido contenido = null;
-//        Emisoras instance = null;
-////        instance.eliminar(contenido);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//    
+     */
+    @Test
+    public void testObtenerTitulo() {
+       Emisoras emisora = new Emisoras("Radio FIC");
+        String result = emisora.obtenerTitulo();
+
+        String expResult = "Radio FIC";
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of obtenerDuracion method, of class Emisoras.
+     */
+    @Test
+    public void testObtenerDuracion() {
+       Emisoras emisora = new Emisoras("Radio FIC");
+        int result = emisora.obtenerDuracion();
+
+        int expResult = 0;
+        assertEquals(expResult, result);
+    }
+
+
+       /**
+     * Test of obtenerListaReproduccion method, of class Canciones.
+     */
+    @Test
+    public void testObtenerListaReproduccion() {
+       Emisoras emisora = new Emisoras("Radio FIC");
+
+         List<Contenido> result = emisora.obtenerListaReproduccion();;
+        List<Contenido> result2 = new ArrayList<Contenido>();;
+        assertEquals(result, result2);
+    }
+
+
+    /**
+     * Test of agregar method, of class Emisoras.
+     */
+    @Test   //añado un contenido a la lista vacia
+    public void testAgregarAListaVacia() throws Exception {
+      
+        Emisoras emisora = new Emisoras("Radio FIC");
+        Contenido contenido = new Anuncios();
+        
+        emisora.agregar(contenido, null);
+
+        List<Contenido> result = emisora.obtenerListaReproduccion();;
+        int tam = result.size();
+        
+        assertEquals(tam, 1);
+    }
+
+     @Test( expected = ContentEmisoraNotFoundException.class)
+     //con una lista no vacia, intento añadir un contenido pasandole un predecesor nulo
+    public void testAgregarPredecesorNulo() throws Exception {
+        
+        Emisoras emisora = new Emisoras("Radio FIC");
+        Contenido contenido = new Anuncios();
+        
+        emisora.agregar(contenido, null);
+      
+        emisora.agregar(contenido, null);
+
+    }
+    
+      @Test // con una lista no vacia, agrego un contenido
+    public void testAgregarVarios() throws Exception {
+        
+        Emisoras emisora = new Emisoras("Radio FIC");
+        Contenido contenido = new Anuncios();
+        
+        emisora.agregar(contenido, null);
+      
+        Contenido contenido2 = new Anuncios();
+
+        emisora.agregar(contenido2, contenido);
+        
+        List<Contenido> result = emisora.obtenerListaReproduccion();;
+        int tam = result.size();
+        
+        assertEquals(tam, 2);
+
+    }
+    
+    
+    @Test( expected = ContentEmisoraNotFoundException.class)
+    //con una lista no vacia, agrego un contenido pasandole un predecesor no valido (y no nulo)
+    public void testAgregarNoPredecesor() throws Exception {
+        
+        Emisoras emisora = new Emisoras("Radio FIC");      
+        Contenido contenido = new Anuncios();
+        emisora.agregar(contenido, null);
+
+        Contenido contenido2 = new Anuncios();
+
+        Contenido contenido3 = new Anuncios();
+        emisora.agregar(contenido3, contenido2);
+
+    }
+    
+    @Test
+    public void testEliminarOk() throws ContentEmisoraNotFoundException{
+        Emisoras emisora = new Emisoras("Radio FIC");      
+        Contenido contenido = new Anuncios();
+        emisora.agregar(contenido, null);
+        
+        emisora.eliminar(contenido);
+        List<Contenido> result = emisora.obtenerListaReproduccion();;
+        int tam = result.size();
+        
+        assertEquals(tam, 0);
+        
+    }
+    
+      @Test
+    public void testEliminarOkDuracion() throws ContentEmisoraNotFoundException{
+        Emisoras emisora = new Emisoras("Radio FIC");      
+        Contenido contenido = new Anuncios();
+        emisora.agregar(contenido, null);
+        int duracionContenido = contenido.obtenerDuracion();
+        int duracionAntes = emisora.obtenerDuracion();
+        emisora.eliminar(contenido);
+        int duracionDespues = emisora.obtenerDuracion();
+       
+        assertTrue(duracionAntes == duracionContenido+duracionDespues);
+        
+    }
+    
+     @Test (expected = ContentEmisoraNotFoundException.class)
+    public void testEliminarNulo() throws ContentEmisoraNotFoundException{
+        Emisoras emisora = new Emisoras("Radio FIC");      
+        Contenido contenido = new Anuncios();
+        emisora.agregar(contenido, null);
+        
+        emisora.eliminar(null);
+       
+    }
+    
+      @Test (expected = ContentEmisoraNotFoundException.class)
+    public void testEliminarNoExiste() throws ContentEmisoraNotFoundException{
+        Emisoras emisora = new Emisoras("Radio FIC");      
+        Contenido contenido = new Anuncios();
+        
+        emisora.eliminar(contenido);
+       
+    }
+
+   
+    /**
+     * Test of buscar method, of class Emisoras.
+     */
+    @Test (expected = TitleNotFoundException.class)
+    public void testBuscarEnVacia() throws Exception {
+        
+        Emisoras emisora = new Emisoras("Radio FIC");      
+        List<Contenido> result = emisora.buscar("nada");
+        
+    }
+
+     @Test (expected = TitleNotFoundException.class)
+    public void testBuscarNoExiste() throws Exception {
+        
+        Emisoras emisora = new Emisoras("Radio FIC");   
+        Contenido contenido = new Anuncios();
+        emisora.agregar(contenido, null);
+        
+        List<Contenido> result = emisora.buscar("nada");
+        
+    }
+    
+     @Test
+    public void testBuscarOk() throws Exception {
+        
+        Emisoras emisora = new Emisoras("Radio FIC");   
+        Contenido contenido = new Anuncios();
+        emisora.agregar(contenido, null);
+        
+        Contenido contenido2 = new Anuncios();
+        emisora.agregar(contenido2, contenido);
+        
+        List<Contenido> result = emisora.buscar("PUBLICIDAD");
+        int tam = result.size();
+        
+        assertEquals(tam, 2);
+        
+        
+    }
 }

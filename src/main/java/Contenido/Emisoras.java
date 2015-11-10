@@ -21,7 +21,8 @@ public class Emisoras implements Contenido {
     public Emisoras(String tit) {
         this.titulo = tit;
         this.duracion = 0;
-        this.lista = new ArrayList();
+        this.lista = new ArrayList<Contenido>();
+
     }
 
     @Override
@@ -42,8 +43,12 @@ public class Emisoras implements Contenido {
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
 
+        if (lista.isEmpty() ){
+            throw new TitleNotFoundException("Lista sin contenidos");
+        }
+                    
         List<Contenido> listaContenido = new ArrayList();
-        
+
         for (Contenido contenido : lista) {
             if (contenido.obtenerTitulo().contains(subcadena)) {
                 listaContenido.add(contenido);
@@ -67,16 +72,15 @@ public class Emisoras implements Contenido {
             if (predecesor == null) {
                 throw new ContentEmisoraNotFoundException("Falta Predecesor");
             }
-        }
 
-        indice = lista.indexOf(predecesor);
-        if (indice != -1) {
-            duracion = duracion + contenido.obtenerDuracion();
-            lista.add(indice++, contenido);
-        } else {
-            throw new ContentEmisoraNotFoundException("Predecesor no encontrado ");
+            indice = lista.indexOf(predecesor);
+            if (indice != -1) {
+                duracion = duracion + contenido.obtenerDuracion();
+                lista.add(indice++, contenido);
+            } else {
+                throw new ContentEmisoraNotFoundException("Predecesor no encontrado ");
+            }
         }
-
     }
 
     @Override
