@@ -14,10 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author alfa1
- */
+
 public class AnunciosTest {
 
     public AnunciosTest() {
@@ -74,12 +71,22 @@ public class AnunciosTest {
     }
 
     @Test
-    public void testBuscar() throws Exception {
+    public void testBuscar() throws TitleNotFoundException {
 
         Anuncios anuncio = new Anuncios();
         List<Contenido> expResult = anuncio.buscar("ub");
 
         assertEquals(expResult, anuncio.obtenerListaReproduccion());
+
+    }
+    
+    @Test (expected = TitleNotFoundException.class)
+    public void testBuscarNotFound() throws TitleNotFoundException {
+
+        Anuncios anuncio = new Anuncios();
+        List<Contenido> expResult = anuncio.buscar("Faustino");
+
+       // assertEquals(expResult, anuncio.obtenerListaReproduccion());
 
     }
 }
