@@ -21,7 +21,8 @@ public class Anuncios implements Contenido {
     public Anuncios() {
         this.duracion = 5;
         this.titulo = "PUBLICIDAD";
-        this.lista = new ArrayList();
+        this.lista = new ArrayList<Contenido>();
+        lista.add(this);
     }
 
     @Override
@@ -36,20 +37,21 @@ public class Anuncios implements Contenido {
 
     @Override
     public List<Contenido> obtenerListaReproduccion() {
-        lista.add(new Anuncios());
         return lista;
     }
 
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException { 
-        if (this.titulo.contains(subcadena)) {
-            lista.add(new Canciones(titulo, duracion));
+        if (this.titulo.contains(subcadena.toUpperCase())) {
             return lista;
         } else {
             throw new TitleNotFoundException("Anuncio no encontrado");
         }
     }
 
+    
+    
+    
     @Override  //Esto es un metodo vacio
     public void agregar(Contenido contenido, Contenido predecesor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
