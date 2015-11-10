@@ -58,8 +58,12 @@ public class ServLocal implements Servidor {
     public void agregar(Contenido contenido, AdminToken token) throws InvalidTokenException {
         if (token.equals(admin)) {
             if(!(contenido instanceof Anuncios)){
-                if(catalogo.contains(contenido))
+                if(!catalogo.contains(contenido))
                     catalogo.add(contenido);
+            }
+            else{
+                if(!publicidad.contains(contenido))
+                    publicidad.add(contenido);
             }
         } else {
             throw new InvalidTokenException(token);
