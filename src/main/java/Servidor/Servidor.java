@@ -7,6 +7,7 @@ package Servidor;
 
 import Servidor.Utils.Token;
 import Contenido.Contenido;
+import Servidor.Utils.AdminToken;
 import Servidor.Utils.ContentNotFoundException;
 import Servidor.Utils.InvalidTokenException;
 import java.util.List;
@@ -19,7 +20,7 @@ public interface Servidor {
     public String obtenerNombre();
     public Token alta(); //Devuelve un token, podemos formarlo con un timestamp now y el nombre de usuario
     public void baja(Token token) throws InvalidTokenException;
-    public void agregar (Contenido contenido, Token token) throws InvalidTokenException;
-    public void eliminar (Contenido contenido, Token token) throws InvalidTokenException, ContentNotFoundException;
+    public void agregar (Contenido contenido, AdminToken token) throws InvalidTokenException;
+    public void eliminar (Contenido contenido, AdminToken token) throws InvalidTokenException, ContentNotFoundException;
     public List<Contenido> buscar (String subcadena, Token token) throws InvalidTokenException;
 }

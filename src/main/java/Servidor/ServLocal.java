@@ -5,6 +5,8 @@
  */
 package Servidor;
 
+import Contenido.Anuncios;
+import Contenido.Canciones;
 import Servidor.Utils.Token;
 import Contenido.Contenido;
 import Servidor.Utils.AdminToken;
@@ -53,9 +55,16 @@ public class ServLocal implements Servidor {
     }
 
     @Override
-    public void agregar(Contenido contenido, Token token) throws InvalidTokenException {
+    public void agregar(Contenido contenido, AdminToken token) throws InvalidTokenException {
         if (token.equals(admin)) {
-            catalogo.add(contenido);
+            if(!(contenido instanceof Anuncios)){
+                if(!catalogo.contains(contenido))
+                    catalogo.add(contenido);
+            }
+            else{
+                if(!publicidad.contains(contenido))
+                    publicidad.add(contenido);
+            }
         } else {
             throw new InvalidTokenException(token);
         }
@@ -63,7 +72,7 @@ public class ServLocal implements Servidor {
     }
 
     @Override
-    public void eliminar(Contenido contenido, Token token) throws InvalidTokenException, ContentNotFoundException {
+    public void eliminar(Contenido contenido, AdminToken token) throws InvalidTokenException, ContentNotFoundException {
         if (token.equals(admin)) {
             if (catalogo.contains(contenido)) {
                 catalogo.remove(contenido);
@@ -101,10 +110,10 @@ public class ServLocal implements Servidor {
                     lista.add(contenido);
                 }
             }
+            token.use();
         } else {
             throw new InvalidTokenException(token);
         }
-        token.use();
         return lista;
     }
 
