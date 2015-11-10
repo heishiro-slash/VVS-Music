@@ -8,10 +8,10 @@ package Contenido;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author José Miguel
- */
+
+
+
+ 
 public class Canciones  implements Contenido{
     
     private String titulo;
@@ -21,7 +21,8 @@ public class Canciones  implements Contenido{
     public Canciones(String tit,int dur) {
         this.titulo=tit;
         this.duracion=dur;
-        this.lista = new ArrayList();
+        this.lista = new ArrayList<Contenido>();
+        lista.add(this);
     }
     
     
@@ -37,20 +38,24 @@ public class Canciones  implements Contenido{
 
     @Override
     public List<Contenido> obtenerListaReproduccion() {
-        lista.add(new Canciones(titulo,duracion));
         return lista;
     }
 
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
         if (this.titulo.contains(subcadena)){
-            lista.add(new Canciones(titulo,duracion)); 
             return lista;
         }else {
            throw new TitleNotFoundException("Cancion no encontrada");
         }
     }
 
+    
+    
+    
+    
+    
+    
     @Override  //Esto es un metodo vacio
     public void agregar(Contenido contenido, Contenido predecesor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

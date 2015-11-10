@@ -5,6 +5,7 @@
  */
 package Contenido;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,27 +14,23 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author alfa1
- */
 public class CancionesTest {
-    
+
     public CancionesTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -41,85 +38,55 @@ public class CancionesTest {
     /**
      * Test of obtenerTitulo method, of class Canciones.
      */
-//    @Test
-//    public void testObtenerTitulo() {
-//        System.out.println("obtenerTitulo");
-//        Canciones instance = null;
-//        String expResult = "";
-//        String result = instance.obtenerTitulo();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of obtenerDuracion method, of class Canciones.
-//     */
-//    @Test
-//    public void testObtenerDuracion() {
-//        System.out.println("obtenerDuracion");
-//        Canciones instance = null;
-//        int expResult = 0;
-//        int result = instance.obtenerDuracion();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of obtenerListaReproduccion method, of class Canciones.
-//     */
-//    @Test
-//    public void testObtenerListaReproduccion() {
-//        System.out.println("obtenerListaReproduccion");
-//        Canciones instance = null;
-//        List<Contenido> expResult = null;
-//        List<Contenido> result = instance.obtenerListaReproduccion();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of buscar method, of class Canciones.
-//     */
-//    @Test
-//    public void testBuscar() throws Exception {
-//        System.out.println("buscar");
-//        String subcadena = "";
-//        Canciones instance = null;
-//        List<Contenido> expResult = null;
-//        List<Contenido> result = instance.buscar(subcadena);
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of agregar method, of class Canciones.
-//     */
-//    @Test
-//    public void testAgregar() {
-//        System.out.println("agregar");
-//        Contenido contenido = null;
-//        Contenido predecesor = null;
-//        Canciones instance = null;
-////        instance.agregar(contenido, predecesor);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of eliminar method, of class Canciones.
-//     */
-//    @Test
-//    public void testEliminar() {
-//        System.out.println("eliminar");
-//        Contenido contenido = null;
-//        Canciones instance = null;
-////        instance.eliminar(contenido);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-    
+    @Test
+    public void testObtenerTitulo() {
+        Canciones cancion = new Canciones("cancion1", 10);
+        String result = cancion.obtenerTitulo();
+
+        String expResult = "cancion1";
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of obtenerDuracion method, of class Canciones.
+     */
+    @Test
+    public void testObtenerDuracion() {
+        Canciones cancion = new Canciones("cancion1", 10);
+        int result = cancion.obtenerDuracion();
+        int expResult = 10;
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of obtenerListaReproduccion method, of class Canciones.
+     */
+    @Test
+    public void testObtenerListaReproduccion() {
+        Canciones cancion = new Canciones("cancion1", 10);
+
+        List<Contenido> result = new ArrayList<Contenido>();;
+        result.add(cancion);
+
+        List<Contenido> result2 = cancion.obtenerListaReproduccion();;
+        assertEquals(result, result2);
+    }
+
+    /**
+     * Test of buscar method, of class Canciones.
+     */
+    @Test
+    public void testBuscar() throws Exception {
+        Canciones cancion = new Canciones("cancion1", 10);
+        List<Contenido> expResult = cancion.buscar("on1");
+
+        assertEquals(expResult, cancion.obtenerListaReproduccion());
+    }
+
+    @Test (expected = TitleNotFoundException.class)
+    public void testBuscarNotFound() throws TitleNotFoundException {
+
+        Canciones cancion = new Canciones("cancion1", 10);
+        List<Contenido> expResult = cancion.buscar("Faustino");
+    }
 }
