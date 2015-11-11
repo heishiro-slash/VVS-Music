@@ -8,15 +8,15 @@ package Servidor.Utils;
 import Contenido.Contenido;
 
 /**
- *
- * @author José Miguel
+ * Excepcion lanzada cuando la busqueda de un contenido no da ningun resultado.
+ * @author JosÃ© Miguel
  */
 public class ContentNotFoundException  extends Exception {
 
     Contenido contenido;
 
     /**
-     *
+     * Constructor
      * @param contenido
      */
     public ContentNotFoundException(Contenido contenido) {

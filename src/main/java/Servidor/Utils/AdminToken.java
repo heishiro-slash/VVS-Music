@@ -9,8 +9,8 @@ import java.util.Objects;
 import java.util.UUID;
 
 /**
- *
- * @author José Miguel
+ * Token de administrador, Singleton.
+ * @author JosÃ© Miguel
  */
 public class AdminToken {
     private static AdminToken admin = null;

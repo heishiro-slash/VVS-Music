@@ -12,16 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author José Miguel
+ * Servidor que implementa un servidor de respaldo para las busquedas
+ * @author JosÃ© Miguel
  */
 public class ServRespaldo extends ServLocal {
 
-    private ServRespaldo respaldo;
+    private Servidor respaldo;
     private List<Token> validTokens = new ArrayList();
 
     /**
-     *
+     * Constructor
      * @param nombre
      */
     public ServRespaldo(String nombre) {
@@ -29,15 +29,15 @@ public class ServRespaldo extends ServLocal {
     }
 
     /**
-     *
+     * Asigna servidor de respaldo 
      * @param respaldo
      */
-    public void setServRespaldo(ServRespaldo respaldo) {
+    public void setServRespaldo(Servidor respaldo) {
         this.respaldo = respaldo;
     }
 
     /**
-     *
+     * Realiza una busqueda entre las canciones  almacenadas en el servidor, si no encuentra ninguna, realizará una búsqueda en el servidor de respaldo.
      * @param subcadena
      * @param token
      * @return

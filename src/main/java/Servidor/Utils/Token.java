@@ -9,15 +9,15 @@ import java.util.Objects;
 import java.util.UUID;
 
 /**
- *
- * @author José Miguel
+ * Clase usada para la conexion
+ * @author JosÃ© Miguel
  */
 public class Token {
     private int caducidad;
     private final String uuid;    
   
     /**
-     *
+     *Constructor
      */
     public Token(){
         caducidad = 10;
@@ -25,8 +25,8 @@ public class Token {
     }
 
     /**
-     *
-     * @return
+     * Funcion que contea la caducidad del token
+     * @return El numero de busquedas que aun quedan 
      */
     public int use(){
         caducidad = -- caducidad ;
@@ -34,8 +34,8 @@ public class Token {
     }
 
     /**
-     *
-     * @return
+     * Funcion que pasa a String el token
+     * @return Id del token
      */
     @Override
     public String toString() {
@@ -43,8 +43,8 @@ public class Token {
     }
 
     /**
-     *
-     * @return
+     * Funcion que devuelve el Hash del token
+     * @return Int del Hash
      */
     @Override
     public int hashCode() {
@@ -54,9 +54,9 @@ public class Token {
     }
 
     /**
-     *
+     * Comparador de tokens
      * @param obj
-     * @return
+     * @return bool
      */
     @Override
     public boolean equals(Object obj) {

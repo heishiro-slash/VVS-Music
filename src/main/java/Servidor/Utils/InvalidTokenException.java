@@ -6,25 +6,25 @@
 package Servidor.Utils;
 
 /**
- *
- * @author José Miguel
+ * Excepcion lanzada cuando un token es invalido o esta caducado.
+ * @author JosÃ© Miguel
  */
 public class InvalidTokenException extends Exception {
 
     /**
-     *
+     * Excepcion para token normal.
      * @param token
      */
     public InvalidTokenException(Token token) {
-        System.out.println("Token caducado o inválido: " + token.toString());
+        System.out.println("Token caducado o invalido: " + token.toString());
     }
 
     /**
-     *
+     * Excepcion para un Token de administrador.
      * @param token
      */
     public InvalidTokenException(AdminToken token) {
-        System.out.println("Token caducado o inválido: " + token.toString());
+        System.out.println("Token caducado o invalido: " + token.toString());
     }
 
 }
