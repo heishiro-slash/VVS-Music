@@ -18,24 +18,42 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
+/**
+ *
+ * @author alfa1
+ */
 public class ServLocalTest {
     
+    /**
+     *
+     */
     public ServLocalTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -67,6 +85,7 @@ public class ServLocalTest {
    
     /**
      * Test of baja method, of class ServLocal.
+     * @throws Servidor.Utils.InvalidTokenException
      */
     
     @Test
@@ -77,6 +96,11 @@ public class ServLocalTest {
         servidor.baja(token);
 
     }
+
+    /**
+     *
+     * @throws InvalidTokenException
+     */
     @Test(expected = InvalidTokenException.class)
     public void testBajaError() throws InvalidTokenException {
         

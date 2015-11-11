@@ -18,27 +18,46 @@ import static org.junit.Assert.*;
  */
 public class TokenTest {
     
+    /**
+     *
+     */
     public TokenTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
 
     //no creados tests de hashcode ni de tostring, considerados triviales
     
+    /**
+     *
+     */
+        
     @Test
     public void testUse() {
         
@@ -48,7 +67,10 @@ public class TokenTest {
         assertEquals( 9,tamano);
     }
     
-      @Test
+    /**
+     *
+     */
+    @Test
     public void testEquals() {
         
         Token token1 = new Token();

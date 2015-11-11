@@ -10,7 +10,12 @@ package Contenido;
  * @author Faustino
  */
 public class ContentEmisoraNotFoundException extends Exception {
-        public ContentEmisoraNotFoundException(String message) {
+
+    /**
+     *
+     * @param message
+     */
+    public ContentEmisoraNotFoundException(String message) {
         super(message);
     }
 }

@@ -15,6 +15,10 @@ public class ContentNotFoundException  extends Exception {
 
     Contenido contenido;
 
+    /**
+     *
+     * @param contenido
+     */
     public ContentNotFoundException(Contenido contenido) {
         this.contenido = contenido;
         System.out.println("Contenido no encontrado: " + contenido.obtenerTitulo());
