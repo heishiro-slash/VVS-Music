@@ -17,8 +17,9 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * Servidor básico
  *
- * @author José Miguel
+ * @author JosÃ© Miguel
  */
 public class ServLocal implements Servidor {
 
@@ -29,6 +30,7 @@ public class ServLocal implements Servidor {
     private List<Token> validTokens = new ArrayList();
 
     /**
+     * Constructor
      *
      * @param nombre
      */
@@ -38,8 +40,9 @@ public class ServLocal implements Servidor {
     }
 
     /**
+     * Devuelve el nombre del servidor
      *
-     * @return
+     * @return nombre
      */
     @Override
     public String obtenerNombre() {
@@ -47,6 +50,8 @@ public class ServLocal implements Servidor {
     }
 
     /**
+     * Devuelve un token nuevo válido. Añade este token a la lista de tokens
+     * válidos.
      *
      * @return
      */
@@ -58,6 +63,7 @@ public class ServLocal implements Servidor {
     }
 
     /**
+     * Elimina un token valido de la lista de tokens
      *
      * @param token
      * @throws InvalidTokenException
@@ -72,6 +78,8 @@ public class ServLocal implements Servidor {
     }
 
     /**
+     * Con un token de aministrador, permite añadir contenido al servidor
+     * Diferencia entre anuncios y el resto del contenido
      *
      * @param contenido
      * @param token
@@ -80,13 +88,14 @@ public class ServLocal implements Servidor {
     @Override
     public void agregar(Contenido contenido, AdminToken token) throws InvalidTokenException {
         if (token.equals(admin)) {
-            if(!(contenido instanceof Anuncios)){
-                if(!catalogo.contains(contenido))
+            if (!(contenido instanceof Anuncios)) {
+                if (!catalogo.contains(contenido)) {
                     catalogo.add(contenido);
-            }
-            else{
-                if(!publicidad.contains(contenido))
+                }
+            } else {
+                if (!publicidad.contains(contenido)) {
                     publicidad.add(contenido);
+                }
             }
         } else {
             throw new InvalidTokenException(token);
@@ -95,7 +104,8 @@ public class ServLocal implements Servidor {
     }
 
     /**
-     *
+     * Con un token de aministrador, permite eliminar contenido del servidor
+     * Diferencia entre anuncios y el resto del contenido
      * @param contenido
      * @param token
      * @throws InvalidTokenException
@@ -107,7 +117,11 @@ public class ServLocal implements Servidor {
             if (catalogo.contains(contenido)) {
                 catalogo.remove(contenido);
             } else {
-                throw new ContentNotFoundException(contenido);
+                if (publicidad.contains(contenido)) {
+                    publicidad.remove(contenido);
+                } else {
+                    throw new ContentNotFoundException(contenido);
+                }
             }
         } else {
             throw new InvalidTokenException(token);
@@ -116,7 +130,8 @@ public class ServLocal implements Servidor {
     }
 
     /**
-     *
+     * Realiza una búsqueda en el servidor de contenido. Si el token es nulo añadira un anuncio al inicio y otro cada 3 contenidos.
+     * Si el token es valido devuelve la lista sin anuncios y al finalizar la búsqueda disminuira el numero de usos restantes del token
      * @param subcadena
      * @param token
      * @return
@@ -128,12 +143,12 @@ public class ServLocal implements Servidor {
         int counter = 3;
         List<Contenido> lista = new ArrayList();
         if (token == null) {
-            if(publicidad.size()>0){
-                    lista.add(publicidad.get((int)(rnd.nextDouble()*lista.size())));
+            if (publicidad.size() > 0) {
+                lista.add(publicidad.get((int) (rnd.nextDouble() * lista.size())));
             }
             for (Contenido contenido : catalogo) {
-                if(counter == 0){
-                    lista.add(publicidad.get((int)(rnd.nextDouble()*lista.size())));
+                if (counter == 0) {
+                    lista.add(publicidad.get((int) (rnd.nextDouble() * lista.size())));
                     counter = 3;
                 }
                 if (contenido.obtenerTitulo().contains(subcadena)) {

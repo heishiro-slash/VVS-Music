@@ -13,32 +13,32 @@ import Servidor.Utils.InvalidTokenException;
 import java.util.List;
 
 /**
- *
- * @author José Miguel
+ * Interfaz del servidor
+ * @author JosÃ© Miguel
  */
 public interface Servidor {
 
     /**
-     *
-     * @return
+     * Devuelve el nombre del servidor
+     * @return Nombre
      */
     public String obtenerNombre();
 
     /**
-     *
-     * @return
+     * Devuelve un token nuevo válido
+     * @return Token
      */
-    public Token alta(); //Devuelve un token, podemos formarlo con un timestamp now y el nombre de usuario
+    public Token alta(); 
 
     /**
-     *
+     * Da de baja un token existente, lanza la excepcion si no lo encuentra
      * @param token
      * @throws InvalidTokenException
      */
     public void baja(Token token) throws InvalidTokenException;
 
     /**
-     *
+     * Un administrador puede agregar contenido al servidor
      * @param contenido
      * @param token
      * @throws InvalidTokenException
@@ -46,7 +46,7 @@ public interface Servidor {
     public void agregar (Contenido contenido, AdminToken token) throws InvalidTokenException;
 
     /**
-     *
+     * Un administrador puede eliminar contenido del servidor
      * @param contenido
      * @param token
      * @throws InvalidTokenException
@@ -55,7 +55,7 @@ public interface Servidor {
     public void eliminar (Contenido contenido, AdminToken token) throws InvalidTokenException, ContentNotFoundException;
 
     /**
-     *
+     * realiza una búsqueda entre las canciones del servidor.
      * @param subcadena
      * @param token
      * @return
