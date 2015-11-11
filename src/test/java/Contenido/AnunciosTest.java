@@ -16,46 +16,36 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author alfa1
+ * @authors: Víctor Blanco, Faustino Castro, Jose Del Río
  */
 public class AnunciosTest {
 
-    /**
-     *
-     */
+   
     public AnunciosTest() {
     }
 
-    /**
-     *
-     */
+   
     @BeforeClass
     public static void setUpClass() {
     }
 
-    /**
-     *
-     */
+    
     @AfterClass
     public static void tearDownClass() {
     }
 
-    /**
-     *
-     */
+  
     @Before
     public void setUp() {
     }
 
-    /**
-     *
-     */
+  
     @After
     public void tearDown() {
     }
 
     /**
-     *
+     *Caso base: obtener el titulo de un anuncio previamente creado.
      */
     @Test
     public void testObtenerTitulo() {
@@ -68,7 +58,7 @@ public class AnunciosTest {
     }
 
     /**
-     *
+    *Caso base: obtener la duracion de un anuncio previamente creado
      */
     @Test
     public void testObtenerDuracion() {
@@ -80,7 +70,7 @@ public class AnunciosTest {
     }
 
     /**
-     * Test of obtenerListaReproduccion method, of class Anuncios.
+    *Caso base: obtener la lista de reproduccion de un anuncio previamente creado
      */
     @Test
     public void testObtenerListaReproduccion() {
@@ -97,6 +87,8 @@ public class AnunciosTest {
     /**
      *
      * @throws TitleNotFoundException
+     * Buscar un anuncio previamente creado
+
      */
     @Test
     public void testBuscar() throws TitleNotFoundException {
@@ -111,14 +103,13 @@ public class AnunciosTest {
     /**
      *
      * @throws TitleNotFoundException
+     * Buscar un anuncio que no existe
      */
     @Test (expected = TitleNotFoundException.class)
     public void testBuscarNotFound() throws TitleNotFoundException {
 
         Anuncios anuncio = new Anuncios();
-        List<Contenido> expResult = anuncio.buscar("Faustino");
-
-       // assertEquals(expResult, anuncio.obtenerListaReproduccion());
+        List<Contenido> expResult = anuncio.buscar("Paquito");
 
     }
 }

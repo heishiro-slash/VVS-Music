@@ -54,6 +54,7 @@ public class AdminTokenTest {
 
     /**
      * Test of getInstance method, of class AdminToken.
+     * verificar que funciona el getInstance
      */
     @Test
     public void testGetInstance() {
