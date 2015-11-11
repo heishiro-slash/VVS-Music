@@ -52,10 +52,10 @@ public class TokenTest {
     public void tearDown() {
     }
 
-    //no creados tests de hashcode ni de tostring, considerados triviales
+    //no creados tests de hashcode ni de toString, considerados triviales
     
     /**
-     *
+     * crear un token, usarlo y verificar que se redujo la caducidad
      */
         
     @Test
@@ -68,7 +68,7 @@ public class TokenTest {
     }
     
     /**
-     *
+     * crear dos tokens, y verificar que el equals los diferencia
      */
     @Test
     public void testEquals() {

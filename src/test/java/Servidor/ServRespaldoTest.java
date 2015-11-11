@@ -57,6 +57,7 @@ public class ServRespaldoTest {
 
     /**
      * Test of setServRespaldo method, of class ServRespaldo.
+     * crear un servidor de respaldo y obtener su nombre
      */
     @Test
     public void testSetServRespaldo() {

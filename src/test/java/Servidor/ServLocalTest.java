@@ -60,6 +60,7 @@ public class ServLocalTest {
 
     /**
      * Test of obtenerNombre method, of class ServLocal.
+     * crear un servidor local y obtener su nombre
      */
     @Test
     public void testObtenerNombre() {
@@ -73,6 +74,8 @@ public class ServLocalTest {
 
     /**
      * Test of alta method, of class ServLocal.
+     * crear un token, y verificar que se creó, usándolo
+     * 
      */
     @Test
     public void testAlta() {
@@ -86,6 +89,7 @@ public class ServLocalTest {
     /**
      * Test of baja method, of class ServLocal.
      * @throws Servidor.Utils.InvalidTokenException
+     * eliminar un token (que no es reducir su capacidad, sino borrarlo)
      */
     
     @Test
@@ -100,6 +104,7 @@ public class ServLocalTest {
     /**
      *
      * @throws InvalidTokenException
+     * intentar dar de baja dos veces un mismo token
      */
     @Test(expected = InvalidTokenException.class)
     public void testBajaError() throws InvalidTokenException {

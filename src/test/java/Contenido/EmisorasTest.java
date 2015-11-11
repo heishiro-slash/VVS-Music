@@ -16,46 +16,37 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author alfa1
+ * @authors: Víctor Blanco, Faustino Castro, Jose Del Río
  */
 public class EmisorasTest {
     
-    /**
-     *
-     */
+   
     public EmisorasTest() {
     }
     
-    /**
-     *
-     */
+  
     @BeforeClass
     public static void setUpClass() {
     }
     
-    /**
-     *
-     */
+   
     @AfterClass
     public static void tearDownClass() {
     }
     
-    /**
-     *
-     */
+
     @Before
     public void setUp() {
     }
     
-    /**
-     *
-     */
+  
     @After
     public void tearDown() {
     }
 
     /**
      * Test of obtenerTitulo method, of class Emisoras.
+     * Crear una emisora y obtener su titulo
      */
     @Test
     public void testObtenerTitulo() {
@@ -68,6 +59,7 @@ public class EmisorasTest {
 
     /**
      * Test of obtenerDuracion method, of class Emisoras.
+     * Crear una emisora y obtener su duracion
      */
     @Test
     public void testObtenerDuracion() {
@@ -81,6 +73,7 @@ public class EmisorasTest {
 
        /**
      * Test of obtenerListaReproduccion method, of class Canciones.
+     * crear una emisora y obtener su lista de reproduccion
      */
     @Test
     public void testObtenerListaReproduccion() {
@@ -95,6 +88,7 @@ public class EmisorasTest {
     /**
      * Test of agregar method, of class Emisoras.
      * @throws java.lang.Exception
+     * Agregar un contenido a la lista de contenido de una emisora
      */
     @Test   //añado un contenido a la lista vacia
     public void testAgregarAListaVacia() throws Exception {
@@ -113,9 +107,10 @@ public class EmisorasTest {
     /**
      *
      * @throws Exception
+     *con una lista no vacia, intento añadir un contenido pasandole un predecesor nulo
+
      */
     @Test( expected = ContentEmisoraNotFoundException.class)
-     //con una lista no vacia, intento añadir un contenido pasandole un predecesor nulo
     public void testAgregarPredecesorNulo() throws Exception {
         
         Emisoras emisora = new Emisoras("Radio FIC");
@@ -130,8 +125,9 @@ public class EmisorasTest {
     /**
      *
      * @throws Exception
+     * con una lista no vacia, agrego un contenido
      */
-    @Test // con una lista no vacia, agrego un contenido
+    @Test 
     public void testAgregarVarios() throws Exception {
         
         Emisoras emisora = new Emisoras("Radio FIC");
@@ -153,9 +149,10 @@ public class EmisorasTest {
     /**
      *
      * @throws Exception
+     * con una lista no vacia, agrego un contenido pasandole un predecesor no valido (y no nulo)
+
      */
     @Test( expected = ContentEmisoraNotFoundException.class)
-    //con una lista no vacia, agrego un contenido pasandole un predecesor no valido (y no nulo)
     public void testAgregarNoPredecesor() throws Exception {
         
         Emisoras emisora = new Emisoras("Radio FIC");      
@@ -172,6 +169,7 @@ public class EmisorasTest {
     /**
      *
      * @throws ContentEmisoraNotFoundException
+     * Añadir un contenido a la emisora y eliminarlo
      */
     @Test
     public void testEliminarOk() throws ContentEmisoraNotFoundException{
@@ -190,6 +188,8 @@ public class EmisorasTest {
     /**
      *
      * @throws ContentEmisoraNotFoundException
+     *  Añadir un contenido a la emisora y eliminarlo, verificando que la
+     *          duracion queda correctamente modificada
      */
     @Test
     public void testEliminarOkDuracion() throws ContentEmisoraNotFoundException{
@@ -208,6 +208,7 @@ public class EmisorasTest {
     /**
      *
      * @throws ContentEmisoraNotFoundException
+     * intenta elimiar de la lista de contenidos de la emisora, un contenido nulo
      */
     @Test (expected = ContentEmisoraNotFoundException.class)
     public void testEliminarNulo() throws ContentEmisoraNotFoundException{
@@ -222,6 +223,8 @@ public class EmisorasTest {
     /**
      *
      * @throws ContentEmisoraNotFoundException
+     * intenta elimiar de la lista de contenidos de la emisora, un contenido 
+     *       que no existe
      */
     @Test (expected = ContentEmisoraNotFoundException.class)
     public void testEliminarNoExiste() throws ContentEmisoraNotFoundException{
@@ -236,6 +239,7 @@ public class EmisorasTest {
     /**
      * Test of buscar method, of class Emisoras.
      * @throws java.lang.Exception
+     * busca un elemento en la lista de contenido VACIA
      */
     @Test (expected = TitleNotFoundException.class)
     public void testBuscarEnVacia() throws Exception {
@@ -248,6 +252,7 @@ public class EmisorasTest {
     /**
      *
      * @throws Exception
+     * busca un elemento que no existe en la lista de contenido
      */
     @Test (expected = TitleNotFoundException.class)
     public void testBuscarNoExiste() throws Exception {
@@ -263,6 +268,7 @@ public class EmisorasTest {
     /**
      *
      * @throws Exception
+     * Busca un contenido en una lista con varios contenidos insertados
      */
     @Test
     public void testBuscarOk() throws Exception {

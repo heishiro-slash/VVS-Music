@@ -15,8 +15,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author alfa1
+ * * @authors: Víctor Blanco, Faustino Castro, Jose Del Río
+
  */
 public class CancionesTest {
 
@@ -26,36 +26,28 @@ public class CancionesTest {
     public CancionesTest() {
     }
 
-    /**
-     *
-     */
+
     @BeforeClass
     public static void setUpClass() {
     }
 
-    /**
-     *
-     */
+ 
     @AfterClass
     public static void tearDownClass() {
     }
 
-    /**
-     *
-     */
     @Before
     public void setUp() {
     }
 
-    /**
-     *
-     */
+
     @After
     public void tearDown() {
     }
 
     /**
      * Test of obtenerTitulo method, of class Canciones.
+     * Crear una cancion y obtener su titulo
      */
     @Test
     public void testObtenerTitulo() {
@@ -68,6 +60,7 @@ public class CancionesTest {
 
     /**
      * Test of obtenerDuracion method, of class Canciones.
+     * Crear una cancion y obtener su duracion
      */
     @Test
     public void testObtenerDuracion() {
@@ -79,6 +72,7 @@ public class CancionesTest {
 
     /**
      * Test of obtenerListaReproduccion method, of class Canciones.
+     * Crear una cancion y obtener su lista de reproduccion
      */
     @Test
     public void testObtenerListaReproduccion() {
@@ -94,6 +88,7 @@ public class CancionesTest {
     /**
      * Test of buscar method, of class Canciones.
      * @throws java.lang.Exception
+     * Buscar una cancion previamente creada
      */
     @Test
     public void testBuscar() throws Exception {
@@ -106,11 +101,12 @@ public class CancionesTest {
     /**
      *
      * @throws TitleNotFoundException
+     * buscar una cancion que no existe
      */
     @Test (expected = TitleNotFoundException.class)
     public void testBuscarNotFound() throws TitleNotFoundException {
 
         Canciones cancion = new Canciones("cancion1", 10);
-        List<Contenido> expResult = cancion.buscar("Faustino");
+        List<Contenido> expResult = cancion.buscar("Manolo");
     }
 }
