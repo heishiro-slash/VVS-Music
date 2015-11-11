@@ -16,4 +16,4 @@ Cada equipo recibirá puntos, o martes 10 de novembro, en función dos seguintes
 ![alt tag](https://github.com/heishiro-slash/VVS-Music/blob/master/uml-vvs-music.png)
 
 Diagrama de clases actualizado:
-![alt tag](https://github.com/heishiro-slash/VVS-Music/blob/master/principal.svg)
+![alt tag](https://cdn.rawgit.com/heishiro-slash/VVS-Music/master/principal.svg)
