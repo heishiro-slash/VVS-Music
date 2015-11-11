@@ -1,5 +1,5 @@
 # VVS-Music
-![alt tag](https://travis-ci.org/heishiro-slash/VVS-Music.svg?branch=master)
+![Travis](https://travis-ci.org/heishiro-slash/VVS-Music)
 
 Enunciado de la p1:
 
