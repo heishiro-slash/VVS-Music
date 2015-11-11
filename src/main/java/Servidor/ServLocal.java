@@ -162,7 +162,9 @@ public class ServLocal implements Servidor {
                     lista.add(contenido);
                 }
             }
-            token.use();
+            if(token.use()==0){
+                baja(token);
+            }
         } else {
             throw new InvalidTokenException(token);
         }
