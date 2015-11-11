@@ -16,20 +16,36 @@ public class Token {
     private int caducidad;
     private final String uuid;    
   
+    /**
+     *
+     */
     public Token(){
         caducidad = 10;
         uuid = UUID.randomUUID().toString();
     }
+
+    /**
+     *
+     * @return
+     */
     public int use(){
         caducidad = -- caducidad ;
         return caducidad;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Token{" + "uuid=" + uuid + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -37,6 +53,11 @@ public class Token {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

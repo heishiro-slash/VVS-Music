@@ -14,28 +14,49 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
+/**
+ *
+ * @author alfa1
+ */
 public class AnunciosTest {
 
+    /**
+     *
+     */
     public AnunciosTest() {
     }
 
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
 
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
 
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
 
+    /**
+     *
+     */
     @Test
     public void testObtenerTitulo() {
         Anuncios anuncio = new Anuncios();
@@ -46,6 +67,9 @@ public class AnunciosTest {
 
     }
 
+    /**
+     *
+     */
     @Test
     public void testObtenerDuracion() {
         Anuncios anuncio = new Anuncios();
@@ -70,6 +94,10 @@ public class AnunciosTest {
 
     }
 
+    /**
+     *
+     * @throws TitleNotFoundException
+     */
     @Test
     public void testBuscar() throws TitleNotFoundException {
 
@@ -80,6 +108,10 @@ public class AnunciosTest {
 
     }
     
+    /**
+     *
+     * @throws TitleNotFoundException
+     */
     @Test (expected = TitleNotFoundException.class)
     public void testBuscarNotFound() throws TitleNotFoundException {
 

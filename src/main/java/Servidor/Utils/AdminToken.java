@@ -18,15 +18,31 @@ public class AdminToken {
     private AdminToken(){
         uuid = UUID.randomUUID().toString();
     }
+
+    /**
+     *
+     * @return
+     */
     public static AdminToken getInstance(){
         if(admin == null){
             admin = new AdminToken();
         }
         return admin;
     }
+
+    /**
+     *
+     * @return
+     */
     public static String getUUID(){
         return uuid;
     }
+
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -45,6 +61,10 @@ public class AdminToken {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "AdminToken{" + uuid + '}';

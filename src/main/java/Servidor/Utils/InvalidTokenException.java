@@ -11,9 +11,18 @@ package Servidor.Utils;
  */
 public class InvalidTokenException extends Exception {
 
+    /**
+     *
+     * @param token
+     */
     public InvalidTokenException(Token token) {
         System.out.println("Token caducado o inválido: " + token.toString());
     }
+
+    /**
+     *
+     * @param token
+     */
     public InvalidTokenException(AdminToken token) {
         System.out.println("Token caducado o inválido: " + token.toString());
     }

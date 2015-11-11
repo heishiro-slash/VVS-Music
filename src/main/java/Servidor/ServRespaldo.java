@@ -20,14 +20,29 @@ public class ServRespaldo extends ServLocal {
     private ServRespaldo respaldo;
     private List<Token> validTokens = new ArrayList();
 
+    /**
+     *
+     * @param nombre
+     */
     public ServRespaldo(String nombre) {
         super(nombre);
     }
 
+    /**
+     *
+     * @param respaldo
+     */
     public void setServRespaldo(ServRespaldo respaldo) {
         this.respaldo = respaldo;
     }
 
+    /**
+     *
+     * @param subcadena
+     * @param token
+     * @return
+     * @throws InvalidTokenException
+     */
     @Override
     public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException {
         List<Contenido> lista = super.buscar(subcadena, token);

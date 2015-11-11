@@ -18,6 +18,9 @@ public class Anuncios implements Contenido {
     private String titulo;
     private List<Contenido> lista;
 
+    /**
+     *
+     */
     public Anuncios() {
         this.duracion = 5;
         this.titulo = "PUBLICIDAD";
@@ -25,21 +28,39 @@ public class Anuncios implements Contenido {
         lista.add(this);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String obtenerTitulo() {
         return this.titulo;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int obtenerDuracion() {
         return this.duracion;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
         return lista;
     }
 
+    /**
+     *
+     * @param subcadena
+     * @return
+     * @throws TitleNotFoundException
+     */
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException { 
         if (this.titulo.contains(subcadena.toUpperCase())) {
@@ -49,14 +70,20 @@ public class Anuncios implements Contenido {
         }
     }
 
-    
-    
-    
+    /**
+     *
+     * @param contenido
+     * @param predecesor
+     */
     @Override  //Esto es un metodo vacio
     public void agregar(Contenido contenido, Contenido predecesor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param contenido
+     */
     @Override  //Esto es un metodo vacio
     public void eliminar(Contenido contenido) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

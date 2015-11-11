@@ -20,21 +20,36 @@ import static org.junit.Assert.*;
  */
 public class EmisorasTest {
     
+    /**
+     *
+     */
     public EmisorasTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -79,6 +94,7 @@ public class EmisorasTest {
 
     /**
      * Test of agregar method, of class Emisoras.
+     * @throws java.lang.Exception
      */
     @Test   //añado un contenido a la lista vacia
     public void testAgregarAListaVacia() throws Exception {
@@ -94,7 +110,11 @@ public class EmisorasTest {
         assertEquals(tam, 1);
     }
 
-     @Test( expected = ContentEmisoraNotFoundException.class)
+    /**
+     *
+     * @throws Exception
+     */
+    @Test( expected = ContentEmisoraNotFoundException.class)
      //con una lista no vacia, intento añadir un contenido pasandole un predecesor nulo
     public void testAgregarPredecesorNulo() throws Exception {
         
@@ -107,7 +127,11 @@ public class EmisorasTest {
 
     }
     
-      @Test // con una lista no vacia, agrego un contenido
+    /**
+     *
+     * @throws Exception
+     */
+    @Test // con una lista no vacia, agrego un contenido
     public void testAgregarVarios() throws Exception {
         
         Emisoras emisora = new Emisoras("Radio FIC");
@@ -126,7 +150,10 @@ public class EmisorasTest {
 
     }
     
-    
+    /**
+     *
+     * @throws Exception
+     */
     @Test( expected = ContentEmisoraNotFoundException.class)
     //con una lista no vacia, agrego un contenido pasandole un predecesor no valido (y no nulo)
     public void testAgregarNoPredecesor() throws Exception {
@@ -142,6 +169,10 @@ public class EmisorasTest {
 
     }
     
+    /**
+     *
+     * @throws ContentEmisoraNotFoundException
+     */
     @Test
     public void testEliminarOk() throws ContentEmisoraNotFoundException{
         Emisoras emisora = new Emisoras("Radio FIC");      
@@ -156,7 +187,11 @@ public class EmisorasTest {
         
     }
     
-      @Test
+    /**
+     *
+     * @throws ContentEmisoraNotFoundException
+     */
+    @Test
     public void testEliminarOkDuracion() throws ContentEmisoraNotFoundException{
         Emisoras emisora = new Emisoras("Radio FIC");      
         Contenido contenido = new Anuncios();
@@ -170,7 +205,11 @@ public class EmisorasTest {
         
     }
     
-     @Test (expected = ContentEmisoraNotFoundException.class)
+    /**
+     *
+     * @throws ContentEmisoraNotFoundException
+     */
+    @Test (expected = ContentEmisoraNotFoundException.class)
     public void testEliminarNulo() throws ContentEmisoraNotFoundException{
         Emisoras emisora = new Emisoras("Radio FIC");      
         Contenido contenido = new Anuncios();
@@ -180,7 +219,11 @@ public class EmisorasTest {
        
     }
     
-      @Test (expected = ContentEmisoraNotFoundException.class)
+    /**
+     *
+     * @throws ContentEmisoraNotFoundException
+     */
+    @Test (expected = ContentEmisoraNotFoundException.class)
     public void testEliminarNoExiste() throws ContentEmisoraNotFoundException{
         Emisoras emisora = new Emisoras("Radio FIC");      
         Contenido contenido = new Anuncios();
@@ -192,6 +235,7 @@ public class EmisorasTest {
    
     /**
      * Test of buscar method, of class Emisoras.
+     * @throws java.lang.Exception
      */
     @Test (expected = TitleNotFoundException.class)
     public void testBuscarEnVacia() throws Exception {
@@ -201,7 +245,11 @@ public class EmisorasTest {
         
     }
 
-     @Test (expected = TitleNotFoundException.class)
+    /**
+     *
+     * @throws Exception
+     */
+    @Test (expected = TitleNotFoundException.class)
     public void testBuscarNoExiste() throws Exception {
         
         Emisoras emisora = new Emisoras("Radio FIC");   
@@ -212,7 +260,11 @@ public class EmisorasTest {
         
     }
     
-     @Test
+    /**
+     *
+     * @throws Exception
+     */
+    @Test
     public void testBuscarOk() throws Exception {
         
         Emisoras emisora = new Emisoras("Radio FIC");   

@@ -18,6 +18,10 @@ public class Emisoras implements Contenido {
     private String titulo;
     private int duracion;
 
+    /**
+     *
+     * @param tit
+     */
     public Emisoras(String tit) {
         this.titulo = tit;
         this.duracion = 0;
@@ -25,21 +29,39 @@ public class Emisoras implements Contenido {
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String obtenerTitulo() {
         return this.titulo;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int obtenerDuracion() {
         return this.duracion;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
         return this.lista;
     }
 
+    /**
+     *
+     * @param subcadena
+     * @return
+     * @throws TitleNotFoundException
+     */
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
 
@@ -62,6 +84,12 @@ public class Emisoras implements Contenido {
         return listaContenido;
     }
 
+    /**
+     *
+     * @param contenido
+     * @param predecesor
+     * @throws ContentEmisoraNotFoundException
+     */
     @Override
     public void agregar(Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException {
         int indice;
@@ -83,6 +111,11 @@ public class Emisoras implements Contenido {
         }
     }
 
+    /**
+     *
+     * @param contenido
+     * @throws ContentEmisoraNotFoundException
+     */
     @Override
     public void eliminar(Contenido contenido) throws ContentEmisoraNotFoundException {
         if (lista.remove(contenido)) {

@@ -28,16 +28,28 @@ public class ServLocal implements Servidor {
     private List<Contenido> publicidad = new ArrayList();
     private List<Token> validTokens = new ArrayList();
 
+    /**
+     *
+     * @param nombre
+     */
     public ServLocal(String nombre) {
         this.nombre = nombre;
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String obtenerNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Token alta() {
         Token token = new Token();
@@ -45,6 +57,11 @@ public class ServLocal implements Servidor {
         return token;
     }
 
+    /**
+     *
+     * @param token
+     * @throws InvalidTokenException
+     */
     @Override
     public void baja(Token token) throws InvalidTokenException {
         if (validTokens.contains(token)) {
@@ -54,6 +71,12 @@ public class ServLocal implements Servidor {
         }
     }
 
+    /**
+     *
+     * @param contenido
+     * @param token
+     * @throws InvalidTokenException
+     */
     @Override
     public void agregar(Contenido contenido, AdminToken token) throws InvalidTokenException {
         if (token.equals(admin)) {
@@ -71,6 +94,13 @@ public class ServLocal implements Servidor {
 
     }
 
+    /**
+     *
+     * @param contenido
+     * @param token
+     * @throws InvalidTokenException
+     * @throws ContentNotFoundException
+     */
     @Override
     public void eliminar(Contenido contenido, AdminToken token) throws InvalidTokenException, ContentNotFoundException {
         if (token.equals(admin)) {
@@ -85,6 +115,13 @@ public class ServLocal implements Servidor {
 
     }
 
+    /**
+     *
+     * @param subcadena
+     * @param token
+     * @return
+     * @throws InvalidTokenException
+     */
     @Override
     public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException {
         Random rnd = new Random();

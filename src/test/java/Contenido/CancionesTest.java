@@ -14,23 +14,42 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ *
+ * @author alfa1
+ */
 public class CancionesTest {
 
+    /**
+     *
+     */
     public CancionesTest() {
     }
 
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
 
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
 
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -74,6 +93,7 @@ public class CancionesTest {
 
     /**
      * Test of buscar method, of class Canciones.
+     * @throws java.lang.Exception
      */
     @Test
     public void testBuscar() throws Exception {
@@ -83,6 +103,10 @@ public class CancionesTest {
         assertEquals(expResult, cancion.obtenerListaReproduccion());
     }
 
+    /**
+     *
+     * @throws TitleNotFoundException
+     */
     @Test (expected = TitleNotFoundException.class)
     public void testBuscarNotFound() throws TitleNotFoundException {
 
