@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author José Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class Anuncios implements Contenido {
 
@@ -19,7 +19,8 @@ public class Anuncios implements Contenido {
     private List<Contenido> lista;
 
     /**
-     *
+     * Crea un anuncio 
+     * El titulo y la duración estan predefinidas y tienen como valores PUBLICIDAD y  5 resprectivamente
      */
     public Anuncios() {
         this.duracion = 5;
@@ -30,7 +31,7 @@ public class Anuncios implements Contenido {
 
     /**
      *
-     * @return
+     * @return Titulo del anuncio
      */
     @Override
     public String obtenerTitulo() {
@@ -39,7 +40,7 @@ public class Anuncios implements Contenido {
 
     /**
      *
-     * @return
+     * @return Duración del anuncio
      */
     @Override
     public int obtenerDuracion() {
@@ -48,7 +49,7 @@ public class Anuncios implements Contenido {
 
     /**
      *
-     * @return
+     * @return Lista de reproducción con un solo anuncio en su contenido
      */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
@@ -57,9 +58,9 @@ public class Anuncios implements Contenido {
 
     /**
      *
-     * @param subcadena
-     * @return
-     * @throws TitleNotFoundException
+     * @param subcadena Palabra clave por la que se desea realizar la busqueda
+     * @return Lista de contenido con el anuncio que concuerde con la palabra clave
+     * @throws TitleNotFoundException Error mostrado en caso de que no haya coincidencia con la palabra clave
      */
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException { 
@@ -71,8 +72,8 @@ public class Anuncios implements Contenido {
     }
 
     /**
-     *
-     * @param contenido
+     * Método no disponible
+     * @param contenido 
      * @param predecesor
      */
     @Override  //Esto es un metodo vacio
@@ -81,7 +82,7 @@ public class Anuncios implements Contenido {
     }
 
     /**
-     *
+     * Método no disponible
      * @param contenido
      */
     @Override  //Esto es un metodo vacio

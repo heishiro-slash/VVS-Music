@@ -7,14 +7,14 @@ package Contenido;
 
 /**
  *
- * @author Faustino
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 
 public class TitleNotFoundException extends Exception {
 
     /**
      *
-     * @param message
+     * @param message Mensaje que se mostrará indicando el error concreto que se produjo
      */
     public TitleNotFoundException(String message) {
         super(message);

@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author alfa1
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class Canciones  implements Contenido{
     
@@ -20,8 +20,8 @@ public class Canciones  implements Contenido{
     
     /**
      *
-     * @param tit
-     * @param dur
+     * @param tit Titulo de la canción
+     * @param dur Duración de la canción
      */
     public Canciones(String tit,int dur) {
         this.titulo=tit;
@@ -32,7 +32,7 @@ public class Canciones  implements Contenido{
     
     /**
      *
-     * @return
+     * @return Titulo de la canción
      */
     @Override
     public String obtenerTitulo() {
@@ -41,7 +41,7 @@ public class Canciones  implements Contenido{
 
     /**
      *
-     * @return
+     * @return Duración de la canción
      */
     @Override
     public int obtenerDuracion() {
@@ -50,7 +50,7 @@ public class Canciones  implements Contenido{
 
     /**
      *
-     * @return
+     * @return Lista de reproducción con una sola canción en su contenido
      */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
@@ -59,9 +59,9 @@ public class Canciones  implements Contenido{
 
     /**
      *
-     * @param subcadena
-     * @return
-     * @throws TitleNotFoundException
+     * @param subcadena Palabra clave por la que se desea realizar la busqueda
+     * @return Lista de contenido con la canción que concuerda con la palabra clave
+     * @throws TitleNotFoundException Error mostrado en caso de que no haya coincidencia con la palabra clave
      */
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
@@ -73,8 +73,8 @@ public class Canciones  implements Contenido{
     }
 
     /**
-     *
-     * @param contenido
+     * Método no disponible
+     * @param contenido 
      * @param predecesor
      */
     @Override  //Esto es un metodo vacio
@@ -83,8 +83,8 @@ public class Canciones  implements Contenido{
     }
 
     /**
-     *
-     * @param contenido
+     * Método no disponible
+     * @param contenido 
      */
     @Override  //Esto es un metodo vacio
     public void eliminar(Contenido contenido) {

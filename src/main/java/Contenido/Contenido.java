@@ -9,48 +9,48 @@ import java.util.List;
 
 /**
  *
- * @author José Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public interface Contenido {
 
     /**
      *
-     * @return
+     * @return Nombre del titulo del contenido
      */
     public String obtenerTitulo();
 
     /**
      *
-     * @return
+     * @return Duracion del contenido
      */
     public int obtenerDuracion();
 
     /**
      *
-     * @return
+     * @return Lista de reproducción con el contenido
      */
     public List<Contenido> obtenerListaReproduccion();
 
     /**
      *
-     * @param subcadena
-     * @return
-     * @throws TitleNotFoundException
+     * @param subcadena Palabra clave por la que se desea realizar la busqueda
+     * @return Lista de contenido con los elementos que concuerden con la palabra clave
+     * @throws TitleNotFoundException Error mostrado cuando no encuentra el contenido
      */
     public List<Contenido> buscar (String subcadena)throws TitleNotFoundException;
 
     /**
      *
-     * @param contenido
-     * @param predecesor
-     * @throws ContentEmisoraNotFoundException
+     * @param contenido Elemento que se desea añadir a la lista de reproducción
+     * @param predecesor Elemento a partir del cual se desea añadir el contenido
+     * @throws ContentEmisoraNotFoundException Contenido no encontrado en la emisora
      */
     public void agregar (Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException;
 
     /**
      *
-     * @param contenido
-     * @throws ContentEmisoraNotFoundException
+     * @param contenido Elemento que se desea quitar de la lista de reproducción
+     * @throws ContentEmisoraNotFoundException Contenido no encontrado en la emisora
      */
     public void eliminar (Contenido contenido) throws ContentEmisoraNotFoundException;
 }

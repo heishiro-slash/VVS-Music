@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author José Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class Emisoras implements Contenido {
 
@@ -19,8 +19,8 @@ public class Emisoras implements Contenido {
     private int duracion;
 
     /**
-     *
-     * @param tit
+     * Se crea una emisora
+     * @param tit Titulo de la emisora
      */
     public Emisoras(String tit) {
         this.titulo = tit;
@@ -31,7 +31,7 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @return
+     * @return Titulo de la emisora
      */
     @Override
     public String obtenerTitulo() {
@@ -40,7 +40,8 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @return
+     * @return Duración de la emisora.
+     * La duración es la suma de todas las duraciones que contenga la lista de dicha emisora
      */
     @Override
     public int obtenerDuracion() {
@@ -49,7 +50,7 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @return
+     * @return Lista de reproducción con los anuncios o canciones que previamente se han añadido a la lista.
      */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
@@ -58,9 +59,9 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @param subcadena
-     * @return
-     * @throws TitleNotFoundException
+     * @param subcadena Palabra clave por la que se desea realizar la busqueda
+     * @return Lista de contenido  los anuncios o canciones que concuerde con la palabra clave
+     * @throws TitleNotFoundException Error mostrado en caso de que no haya coincidencia con la palabra clave o la lista esté sin contenido.
      */
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
@@ -86,9 +87,9 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @param contenido
-     * @param predecesor
-     * @throws ContentEmisoraNotFoundException
+     * @param contenido Elemento que se desea añadir a la lista de reproducción
+     * @param predecesor Elemento a partir del cual se desea añadir el contenido
+     * @throws ContentEmisoraNotFoundException Error mostrado en caso de ausencia de predecesor o de que no sea valido.
      */
     @Override
     public void agregar(Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException {
@@ -113,8 +114,8 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @param contenido
-     * @throws ContentEmisoraNotFoundException
+     * @param contenido Elemento que se desea eliminar de la lista de reproducción
+     * @throws ContentEmisoraNotFoundException Error mostrado en caso de contenido no existente.
      */
     @Override
     public void eliminar(Contenido contenido) throws ContentEmisoraNotFoundException {
