@@ -29,7 +29,7 @@ public class Token {
      * @return El numero de busquedas que aun quedan 
      */
     public int use(){
-        caducidad = -- caducidad ;
+        caducidad = caducidad-1 ;
         return caducidad;
     }
 
