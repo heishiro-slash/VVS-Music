@@ -80,7 +80,6 @@ public class Canciones  implements Contenido{
      */
     @Override  //Esto es un metodo vacio
     public void agregar(Contenido contenido, Contenido predecesor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -89,7 +88,6 @@ public class Canciones  implements Contenido{
      */
     @Override  //Esto es un metodo vacio
     public void eliminar(Contenido contenido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
