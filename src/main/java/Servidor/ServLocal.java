@@ -18,7 +18,7 @@ import java.util.Random;
 /**
  * Servidor básico
  *
- * @author JosÃ© Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class ServLocal implements Servidor {
 

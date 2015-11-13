@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Servidor que implementa un servidor de respaldo para las busquedas
- * @author JosÃ© Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class ServRespaldo extends ServLocal {
 

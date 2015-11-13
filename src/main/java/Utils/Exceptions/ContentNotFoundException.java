@@ -9,7 +9,7 @@ import Contenido.Contenido;
 
 /**
  * Excepcion lanzada cuando la busqueda de un contenido no da ningun resultado.
- * @author JosÃ© Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class ContentNotFoundException  extends Exception {
 
