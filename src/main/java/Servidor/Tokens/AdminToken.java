@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * Token de administrador, Singleton.
- * @author JosÃ© Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class AdminToken {
     private static AdminToken admin = null;

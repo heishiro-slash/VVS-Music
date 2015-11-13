@@ -10,7 +10,7 @@ import Servidor.Tokens.Token;
 
 /**
  * Excepcion lanzada cuando un token es invalido o esta caducado.
- * @author JosÃ© Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class InvalidTokenException extends Exception {
 

@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author alfa1
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class ServLocalTest {
     

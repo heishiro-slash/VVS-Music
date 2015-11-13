@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * Clase usada para la conexion
- * @author JosÃ© Miguel
+ * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class Token {
     private int caducidad;
