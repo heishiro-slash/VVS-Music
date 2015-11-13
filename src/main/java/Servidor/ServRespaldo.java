@@ -7,8 +7,8 @@ package Servidor;
 
 import Contenido.Anuncios;
 import Contenido.Contenido;
-import Servidor.Utils.InvalidTokenException;
-import Servidor.Utils.Token;
+import Utils.Exceptions.InvalidTokenException;
+import Servidor.Tokens.Token;
 import java.util.List;
 
 /**

@@ -5,6 +5,8 @@
  */
 package Contenido;
 
+import Utils.Exceptions.ContentEmisoraNotFoundException;
+import Utils.Exceptions.TitleNotFoundException;
 import java.util.List;
 
 /**

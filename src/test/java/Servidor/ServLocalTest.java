@@ -7,9 +7,9 @@ package Servidor;
 
 import Contenido.Anuncios;
 import Contenido.Contenido;
-import Servidor.Utils.AdminToken;
-import Servidor.Utils.InvalidTokenException;
-import Servidor.Utils.Token;
+import Servidor.Tokens.AdminToken;
+import Utils.Exceptions.InvalidTokenException;
+import Servidor.Tokens.Token;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;

@@ -6,11 +6,11 @@
 package Servidor;
 
 import Contenido.Anuncios;
-import Servidor.Utils.Token;
+import Servidor.Tokens.Token;
 import Contenido.Contenido;
-import Servidor.Utils.AdminToken;
-import Servidor.Utils.ContentNotFoundException;
-import Servidor.Utils.InvalidTokenException;
+import Servidor.Tokens.AdminToken;
+import Utils.Exceptions.ContentNotFoundException;
+import Utils.Exceptions.InvalidTokenException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
