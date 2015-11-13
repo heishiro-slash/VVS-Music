@@ -5,6 +5,7 @@
  */
 package Servidor.Utils;
 
+import Servidor.Tokens.Token;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -6,7 +6,7 @@
 package Servidor;
 
 import Contenido.Contenido;
-import Servidor.Utils.Token;
+import Servidor.Tokens.Token;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
