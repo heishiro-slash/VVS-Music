@@ -17,17 +17,14 @@ public class Anuncios implements Contenido {
 
     private int duracion;
     private String titulo;
-    private List<Contenido> lista;
 
     /**
-     * Crea un anuncio 
-     * El titulo y la duración estan predefinidas y tienen como valores PUBLICIDAD y  5 resprectivamente
+     * Crea un anuncio El titulo y la duración estan predefinidas y tienen como
+     * valores PUBLICIDAD y 5 resprectivamente
      */
     public Anuncios() {
         this.duracion = 5;
         this.titulo = "PUBLICIDAD";
-        this.lista = new ArrayList<Contenido>();
-        lista.add(this);
     }
 
     /**
@@ -54,18 +51,24 @@ public class Anuncios implements Contenido {
      */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
+        List<Contenido> lista = new ArrayList<Contenido>();
+        lista.add(this);
         return lista;
     }
 
     /**
      *
      * @param subcadena Palabra clave por la que se desea realizar la busqueda
-     * @return Lista de contenido con el anuncio que concuerde con la palabra clave
-     * @throws TitleNotFoundException Error mostrado en caso de que no haya coincidencia con la palabra clave
+     * @return Lista de contenido con el anuncio que concuerde con la palabra
+     * clave
+     * @throws TitleNotFoundException Error mostrado en caso de que no haya
+     * coincidencia con la palabra clave
      */
     @Override
-    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException { 
+    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
+        List<Contenido> lista = new ArrayList<Contenido>();
         if (this.titulo.contains(subcadena.toUpperCase())) {
+            lista.add(this);
             return lista;
         } else {
             throw new TitleNotFoundException("Anuncio no encontrado");
@@ -74,7 +77,8 @@ public class Anuncios implements Contenido {
 
     /**
      * Método no disponible
-     * @param contenido 
+     *
+     * @param contenido
      * @param predecesor
      */
     @Override  //Esto es un metodo vacio
@@ -83,6 +87,7 @@ public class Anuncios implements Contenido {
 
     /**
      * Método no disponible
+     *
      * @param contenido
      */
     @Override  //Esto es un metodo vacio
