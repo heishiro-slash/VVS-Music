@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Contenido;
+package contenido;
 
-import Utils.Exceptions.ContentEmisoraNotFoundException;
-import Utils.Exceptions.TitleNotFoundException;
+import utils.Exceptions.ContentEmisoraNotFoundException;
+import utils.Exceptions.TitleNotFoundException;
 import java.util.List;
 
 /**

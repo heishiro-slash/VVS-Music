@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servidor;
+package servidorTest;
 
-import Contenido.Contenido;
-import Servidor.Tokens.Token;
+import servidor.ServRespaldo;
+import contenido.Contenido;
+import servidor.Tokens.Token;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Utils.Exceptions;
+package utils.Exceptions;
 
-import Servidor.Tokens.AdminToken;
-import Servidor.Tokens.Token;
+import servidor.Tokens.AdminToken;
+import servidor.Tokens.Token;
 
 /**
  * Excepcion lanzada cuando un token es invalido o esta caducado.
