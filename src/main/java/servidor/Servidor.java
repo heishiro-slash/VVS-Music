@@ -8,8 +8,8 @@ package servidor;
 import servidor.Tokens.Token;
 import contenido.Contenido;
 import servidor.Tokens.AdminToken;
-import utils.Exceptions.ContentNotFoundException;
-import utils.Exceptions.InvalidTokenException;
+import utils.exceptions.contenido.ContentNotFoundException;
+import utils.exceptions.tokens.InvalidTokenException;
 import java.util.List;
 
 /**

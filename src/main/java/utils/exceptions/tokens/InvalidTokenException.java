@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils.Exceptions;
+package utils.exceptions.tokens;
 
 import servidor.Tokens.AdminToken;
 import servidor.Tokens.Token;

@@ -5,8 +5,8 @@
  */
 package contenido;
 
-import utils.Exceptions.ContentEmisoraNotFoundException;
-import utils.Exceptions.TitleNotFoundException;
+import utils.exceptions.contenido.ContentEmisoraNotFoundException;
+import utils.exceptions.contenido.TitleNotFoundException;
 import java.util.List;
 
 /**
