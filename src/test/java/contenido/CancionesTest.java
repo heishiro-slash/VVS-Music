@@ -7,7 +7,7 @@ package contenido;
 
 import contenido.Contenido;
 import contenido.Canciones;
-import utils.Exceptions.TitleNotFoundException;
+import utils.exceptions.contenido.TitleNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;

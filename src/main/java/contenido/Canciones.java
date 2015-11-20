@@ -5,7 +5,7 @@
  */
 package contenido;
 
-import utils.Exceptions.TitleNotFoundException;
+import utils.exceptions.contenido.TitleNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
