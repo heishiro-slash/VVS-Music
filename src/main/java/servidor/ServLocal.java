@@ -24,9 +24,9 @@ public class ServLocal implements Servidor {
 
     private final String nombre;
     private final AdminToken admin = AdminToken.getInstance();
-    private List<Contenido> catalogo = new ArrayList();
-    private List<Contenido> publicidad = new ArrayList();
-    private List<Token> validTokens = new ArrayList();
+    private List<Contenido> catalogo = new ArrayList<Contenido>();
+    private List<Contenido> publicidad = new ArrayList<Contenido>();
+    private List<Token> validTokens = new ArrayList<Token>();
 
     /**
      * Constructor
@@ -140,7 +140,7 @@ public class ServLocal implements Servidor {
     public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException {
         Random rnd = new Random();
         int counter = 3;
-        List<Contenido> lista = new ArrayList();
+        List<Contenido> lista = new ArrayList<Contenido>();
         if (token == null) {
             if (publicidad.size() > 0) {
                 lista.add(publicidad.get((int) (rnd.nextDouble() * lista.size())));
