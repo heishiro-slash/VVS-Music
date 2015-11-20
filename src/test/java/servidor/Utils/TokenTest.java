@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servidor.Utils;
+package servidor.Utils;
 
-import Servidor.Tokens.AdminToken;
+import servidor.Tokens.Token;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,12 +17,12 @@ import static org.junit.Assert.*;
  *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
-public class AdminTokenTest {
+public class TokenTest {
     
     /**
      *
      */
-    public AdminTokenTest() {
+    public TokenTest() {
     }
     
     /**
@@ -53,19 +53,31 @@ public class AdminTokenTest {
     public void tearDown() {
     }
 
+    //no creados tests de hashcode ni de toString, considerados triviales
+    
     /**
-     * Test of getInstance method, of class AdminToken.
-     * verificar que funciona el getInstance
+     * crear un token, usarlo y verificar que se redujo la caducidad
+     */
+        
+    @Test
+    public void testUse() {
+        
+        Token token = new Token();
+        int tamano = token.use();
+        
+        assertEquals( 9,tamano);
+    }
+    
+    /**
+     * crear dos tokens, y verificar que el equals los diferencia
      */
     @Test
-    public void testGetInstance() {
-        AdminToken admin = AdminToken.getInstance();
-
-        assertFalse( admin == null);
-      
+    public void testEquals() {
+        
+        Token token1 = new Token();
+        Token token2 = new Token();
+        
+        assertFalse(token1.equals(token2));
     }
-
-   
-
 
 }

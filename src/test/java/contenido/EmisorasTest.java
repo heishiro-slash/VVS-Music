@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Contenido;
+package contenido;
 
-import Utils.Exceptions.ContentEmisoraNotFoundException;
-import Utils.Exceptions.TitleNotFoundException;
+import contenido.Contenido;
+import contenido.Anuncios;
+import contenido.Emisoras;
+import utils.Exceptions.ContentEmisoraNotFoundException;
+import utils.Exceptions.TitleNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;

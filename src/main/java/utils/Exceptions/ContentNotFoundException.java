@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Utils.Exceptions;
+package utils.Exceptions;
 
-import Contenido.Contenido;
+import contenido.Contenido;
 
 /**
  * Excepcion lanzada cuando la busqueda de un contenido no da ningun resultado.

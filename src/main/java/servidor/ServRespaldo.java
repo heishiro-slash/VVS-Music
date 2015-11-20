@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servidor;
+package servidor;
 
-import Contenido.Anuncios;
-import Contenido.Contenido;
-import Utils.Exceptions.InvalidTokenException;
-import Servidor.Tokens.Token;
+import contenido.Anuncios;
+import contenido.Contenido;
+import utils.Exceptions.InvalidTokenException;
+import servidor.Tokens.Token;
 import java.util.List;
 
 /**
