@@ -30,6 +30,9 @@ public interface Servidor {
      */
     public Token alta(); 
 
+    
+    public Token alta(Token token); 
+    
     /**
      * Da de baja un token existente, lanza la excepcion si no lo encuentra
      * @param token

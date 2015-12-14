@@ -61,6 +61,12 @@ public class ServLocal implements Servidor {
         return token;
     }
 
+    @Override
+    public Token alta(Token token) {
+        validTokens.add(token);
+        return token;
+    }
+
     /**
      * Elimina un token valido de la lista de tokens
      *
@@ -105,6 +111,7 @@ public class ServLocal implements Servidor {
     /**
      * Con un token de aministrador, permite eliminar contenido del servidor
      * Diferencia entre anuncios y el resto del contenido
+     *
      * @param contenido
      * @param token
      * @throws InvalidTokenException
@@ -129,8 +136,11 @@ public class ServLocal implements Servidor {
     }
 
     /**
-     * Realiza una búsqueda en el servidor de contenido. Si el token es nulo añadira un anuncio al inicio y otro cada 3 contenidos.
-     * Si el token es valido devuelve la lista sin anuncios y al finalizar la búsqueda disminuira el numero de usos restantes del token
+     * Realiza una búsqueda en el servidor de contenido. Si el token es nulo
+     * añadira un anuncio al inicio y otro cada 3 contenidos. Si el token es
+     * valido devuelve la lista sin anuncios y al finalizar la búsqueda
+     * disminuira el numero de usos restantes del token
+     *
      * @param subcadena
      * @param token
      * @return
@@ -143,11 +153,13 @@ public class ServLocal implements Servidor {
         List<Contenido> lista = new ArrayList<Contenido>();
         if (token == null) {
             if (publicidad.size() > 0) {
-                lista.add(publicidad.get((int) (rnd.nextDouble() * lista.size())));
+                lista.add(publicidad.get((int) (rnd.nextDouble() * (publicidad.size()))));
             }
             for (Contenido contenido : catalogo) {
                 if (counter == 0) {
-                    lista.add(publicidad.get((int) (rnd.nextDouble() * lista.size())));
+                    if (publicidad.size() > 0) {
+                        lista.add(publicidad.get((int) (rnd.nextDouble() * (publicidad.size()))));
+                    }
                     counter = 3;
                 }
                 if (contenido.obtenerTitulo().contains(subcadena)) {
@@ -161,7 +173,7 @@ public class ServLocal implements Servidor {
                     lista.add(contenido);
                 }
             }
-            if(token.use()==0){
+            if (token.use() == 0) {
                 baja(token);
             }
         } else {
