@@ -12,40 +12,41 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import servidor.Tokens.AdminToken;
 
 /**
  *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class TokenTest {
-    
+
     /**
      *
      */
     public TokenTest() {
     }
-    
+
     /**
      *
      */
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     /**
      *
      */
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     /**
      *
      */
     @Before
     public void setUp() {
     }
-    
+
     /**
      *
      */
@@ -54,30 +55,38 @@ public class TokenTest {
     }
 
     //no creados tests de hashcode ni de toString, considerados triviales
-    
     /**
      * crear un token, usarlo y verificar que se redujo la caducidad
      */
-        
     @Test
     public void testUse() {
-        
+
         Token token = new Token();
         int tamano = token.use();
-        
-        assertEquals( 9,tamano);
+
+        assertEquals(9, tamano);
     }
-    
+
     /**
      * crear dos tokens, y verificar que el equals los diferencia
      */
     @Test
     public void testEquals() {
-        
+
         Token token1 = new Token();
         Token token2 = new Token();
-        
+        AdminToken admin = AdminToken.getInstance();
         assertFalse(token1.equals(token2));
+        assertFalse(token1.equals(null));
+        assertFalse(token1.equals(admin));
+    }
+
+    @Test
+    public void testHashcode() {
+
+        Token token1 = new Token();
+        Token token2 = new Token();
+        assertFalse(token1.hashCode() == token2.hashCode());
     }
 
 }

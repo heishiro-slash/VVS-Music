@@ -15,40 +15,41 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import servidor.ServLocal;
 
 /**
  *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class ServRespaldoTest {
-    
+
     /**
      *
      */
     public ServRespaldoTest() {
     }
-    
+
     /**
      *
      */
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     /**
      *
      */
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     /**
      *
      */
     @Before
     public void setUp() {
     }
-    
+
     /**
      *
      */
@@ -57,16 +58,16 @@ public class ServRespaldoTest {
     }
 
     /**
-     * Test of setServRespaldo method, of class ServRespaldo.
-     * crear un servidor de respaldo y obtener su nombre
+     * Test of setServRespaldo method, of class ServRespaldo. crear un servidor
+     * de respaldo y obtener su nombre
      */
     @Test
     public void testSetServRespaldo() {
         ServRespaldo servidor = new ServRespaldo("Torre");
         servidor.setServRespaldo(servidor);
-        
+
         String nombre = servidor.obtenerNombre();
-        
+
         assertEquals(nombre, "Torre");
 
     }
@@ -76,15 +77,12 @@ public class ServRespaldoTest {
      */
 //    @Test
 //    public void testBuscar() throws Exception {
-//        System.out.println("buscar");
-//        String subcadena = "";
-//        Token token = null;
-//        ServRespaldo instance = null;
-//        List<Contenido> expResult = null;
-//        List<Contenido> result = instance.buscar(subcadena, token);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+//        ServRespaldo servidor = new ServRespaldo("Torre");
+//        ServLocal local = new ServLocal("tino");
+//        Token token = local.alta();
+//        //servidor.setServRespaldo(local);
+//        List<Contenido> lista = servidor.buscar("cho", null);
+//        //assertEquals(lista, 0);
 //    }
 
 }

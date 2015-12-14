@@ -46,7 +46,9 @@ public class ServRespaldo extends ServLocal {
     public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException {
         List<Contenido> lista = super.buscar(subcadena, token);
         if(lista.isEmpty()||(lista.get(0) instanceof Anuncios && lista.size()==1)){
+            respaldo.alta(token);
             lista = respaldo.buscar(subcadena, token);
+            respaldo.baja(token);
         }
         return lista;
     }

@@ -12,40 +12,41 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import servidor.Tokens.Token;
 
 /**
  *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class AdminTokenTest {
-    
+
     /**
      *
      */
     public AdminTokenTest() {
     }
-    
+
     /**
      *
      */
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     /**
      *
      */
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     /**
      *
      */
     @Before
     public void setUp() {
     }
-    
+
     /**
      *
      */
@@ -54,18 +55,31 @@ public class AdminTokenTest {
     }
 
     /**
-     * Test of getInstance method, of class AdminToken.
-     * verificar que funciona el getInstance
+     * Test of getInstance method, of class AdminToken. verificar que funciona
+     * el getInstance
      */
     @Test
     public void testGetInstance() {
         AdminToken admin = AdminToken.getInstance();
+        System.out.println(AdminToken.getInstance().toString());
+        assertFalse(admin == null);
 
-        assertFalse( admin == null);
-      
     }
 
-   
+    @Test
+    public void testGetUUID() {
+        // AdminToken admin = AdminToken.getInstance();
+        String uuid = AdminToken.getUUID();
 
+    }
 
+    @Test
+    public void testEquals() {
+
+        AdminToken admin = AdminToken.getInstance();
+        assertFalse(admin.equals(null));
+        Token token = new Token();
+        assertFalse(admin.equals(token));
+        
+    }
 }
