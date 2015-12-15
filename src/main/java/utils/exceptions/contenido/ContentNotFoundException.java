@@ -1,10 +1,10 @@
+package utils.exceptions.contenido;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils_exceptions_contenido;
-
 import contenido.Contenido;
 
 /**
@@ -14,16 +14,16 @@ import contenido.Contenido;
  */
 public class ContentNotFoundException extends Exception {
 
-    Contenido contenido;
+  Contenido contenido;
 
-    /**
-     * Constructor
-     *
-     * @param contenido
-     */
-    public ContentNotFoundException(Contenido contenido) {
-        this.contenido = contenido;
-        System.out.println("Contenido no encontrado: " + contenido.obtenerTitulo());
-    }
+  /**
+   *Java Doc.
+   *
+   * @param contenido Constructor
+   */
+  public ContentNotFoundException(Contenido contenido) {
+    this.contenido = contenido;
+    System.out.println("Contenido no encontrado: " + contenido.obtenerTitulo());
+  }
 
 }
