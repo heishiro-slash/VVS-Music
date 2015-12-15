@@ -74,9 +74,8 @@ public class ServLocal implements Servidor {
 
   /**
    * Elimina un token valido de la lista de tokens.
-   *
    * @param token elimina un token
-   * @throws InvalidTokenException
+   * @throws InvalidTokenException  token no valido
    */
   @Override
   public void baja(Token token) throws InvalidTokenException {
@@ -91,9 +90,9 @@ public class ServLocal implements Servidor {
    * Con un token de aministrador, permite añadir contenido al servidor.
    * Diferencia entre anuncios y el resto del contenido
    *
-   * @param contenido
-   * @param token
-   * @throws InvalidTokenException
+   * @param contenido el contenido
+   * @param token el token
+   * @throws InvalidTokenException token no valido
    */
   @Override
   public void agregar(Contenido contenido, AdminToken token) throws InvalidTokenException {
@@ -115,10 +114,10 @@ public class ServLocal implements Servidor {
    * Con un token de aministrador, permite eliminar contenido del servidor.
    * Diferencia entre anuncios y el resto del contenido.
    *
-   * @param contenido
-   * @param token
-   * @throws InvalidTokenException
-   * @throws ContentNotFoundException
+   * @param contenido contenido que se le pasa
+   * @param token el admintoken
+   * @throws InvalidTokenException token no valido
+   * @throws ContentNotFoundException (No se encuentra el contenido)
    */
   @Override
   public void eliminar(Contenido contenido, AdminToken token) throws
@@ -143,10 +142,10 @@ public class ServLocal implements Servidor {
    * valido devuelve la lista sin anuncios y al finalizar la búsqueda disminuira
    * el numero de usos restantes del token
    *
-   * @param subcadena
-   * @param token
-   * @return
-   * @throws InvalidTokenException
+   * @param contenido contenido que se le pasa
+   * @param token el admintoken
+   * @return  devuelve la lista de contenido
+   * @throws InvalidTokenException token no valido
    */
   @Override
   public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException {

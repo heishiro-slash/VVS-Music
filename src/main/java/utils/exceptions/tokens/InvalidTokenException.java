@@ -18,7 +18,7 @@ public class InvalidTokenException extends Exception {
   /**
    * Excepcion para token normal.
    *
-   * @param token
+   * @param token el token
    */
   public InvalidTokenException(Token token) {
     System.out.println("Token caducado o invalido: " + token.toString());
@@ -27,7 +27,7 @@ public class InvalidTokenException extends Exception {
   /**
    * Excepcion para un Token de administrador.
    *
-   * @param token
+   * @param token el token
    */
   public InvalidTokenException(AdminToken token) {
     System.out.println("Token caducado o invalido: " + token.toString());

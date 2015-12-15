@@ -79,8 +79,8 @@ public class Anuncios implements Contenido {
   /**
    * Método no disponible.
    *
-   * @param contenido
-   * @param predecesor
+   * @param contenido contenido
+   * @param predecesor contenido anterior
    */
   @Override  //Esto es un metodo vacio
   public void agregar(Contenido contenido, Contenido predecesor) {
@@ -89,7 +89,7 @@ public class Anuncios implements Contenido {
   /**
    * Método no disponible.
    *
-   * @param contenido
+   * @param contenido contenido que eliminas
    */
   @Override  //Esto es un metodo vacio
   public void eliminar(Contenido contenido) {

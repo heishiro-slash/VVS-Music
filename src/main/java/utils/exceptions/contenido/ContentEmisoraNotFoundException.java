@@ -6,17 +6,17 @@ package utils.exceptions.contenido;
  * and open the template in the editor.
  */
 /**
- *.
+ * .
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class ContentEmisoraNotFoundException extends Exception {
 
   /**
-   *Java Doc.
+   * Java Doc.
+   *
    * @param message Mensaje que se mostrará indicando el error concreto que se
    * produjo
    */
-  
   public ContentEmisoraNotFoundException(String message) {
     super(message);
   }

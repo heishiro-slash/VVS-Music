@@ -5,12 +5,16 @@ package servidor;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import servidor.tokens.Token;
 import contenido.Contenido;
+
+
 import servidor.tokens.AdminToken;
+import servidor.tokens.Token;
+
+import java.util.List;
+
 import utils.exceptions.contenido.ContentNotFoundException;
 import utils.exceptions.tokens.InvalidTokenException;
-import java.util.List;
 
 /**
  * Interfaz del servidor.
@@ -38,27 +42,27 @@ public interface Servidor {
   /**
    * Da de baja un token existente, lanza la excepcion si no lo encuentra.
    *
-   * @param token
-   * @throws InvalidTokenException
+   * @param token contenido que das de baja
+   * @throws InvalidTokenException  si el contenido no existe
    */
   public void baja(Token token) throws InvalidTokenException;
 
   /**
    * Un administrador puede agregar contenido al servidor.
    *
-   * @param contenido
-   * @param token
-   * @throws InvalidTokenException
+   * @param contenido contenido que agregas
+   * @param token adminToken
+   * @throws InvalidTokenException token no valido
    */
   public void agregar(Contenido contenido, AdminToken token) throws InvalidTokenException;
 
   /**
    * Un administrador puede eliminar contenido del servidor.
    *
-   * @param contenido
-   * @param token
-   * @throws InvalidTokenException
-   * @throws ContentNotFoundException
+   * @param contenido contenido que le pasas
+   * @param token el adminToken
+   * @throws InvalidTokenException si no se pudo aliminar
+   * @throws ContentNotFoundException si no se encontro el contenido
    */
   public void eliminar(Contenido contenido, AdminToken token) throws
           InvalidTokenException, ContentNotFoundException;
@@ -66,10 +70,10 @@ public interface Servidor {
   /**
    * realiza una búsqueda entre las canciones del servidor.
    *
-   * @param subcadena
-   * @param token
-   * @return
-   * @throws InvalidTokenException
+   * @param subcadena por la que buscas
+   * @param token el token necesario
+   * @return devolvemos una lista de contenido 
+   * @throws InvalidTokenException caso de error
    */
   public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException;
 }

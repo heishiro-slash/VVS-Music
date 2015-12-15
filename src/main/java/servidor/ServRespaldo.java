@@ -7,9 +7,11 @@ package servidor;
  */
 import contenido.Anuncios;
 import contenido.Contenido;
-import utils.exceptions.tokens.InvalidTokenException;
 import servidor.tokens.Token;
+
 import java.util.List;
+
+import utils.exceptions.tokens.InvalidTokenException;
 
 /**
  * Servidor que implementa un servidor de respaldo para las busquedas.
@@ -23,7 +25,7 @@ public class ServRespaldo extends ServLocal {
   /**Java Doc.
    * Constructor.
    *
-   * @param nombre
+   * @param nombre (del servidor de respaldo)
    */
   public ServRespaldo(String nombre) {
     super(nombre);
@@ -32,7 +34,7 @@ public class ServRespaldo extends ServLocal {
   /**
    * Asigna servidor de respaldo.
    *
-   * @param respaldo
+   * @param respaldo setter
    */
   public void setServRespaldo(Servidor respaldo) {
     this.respaldo = respaldo;
@@ -42,10 +44,10 @@ public class ServRespaldo extends ServLocal {
    * Realiza una busqueda entre las canciones almacenadas en el servidor, si no
    * encuentra ninguna, realizará una búsqueda en el servidor de respaldo.
    *
-   * @param subcadena
-   * @param token
-   * @return
-   * @throws InvalidTokenException
+   * @param subcadena la subcadena
+   * @param token el token
+   * @return devuelve lista de contenido
+   * @throws InvalidTokenException si el token no  es valido
    */
   @Override
   public List<Contenido> buscar(String subcadena, Token token) throws InvalidTokenException {

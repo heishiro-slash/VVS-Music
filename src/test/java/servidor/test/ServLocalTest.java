@@ -15,6 +15,7 @@ import servidor.tokens.Token;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -91,7 +92,7 @@ public class ServLocalTest {
   /**
    * Test of baja method, of class ServLocal.
    *
-   * @throws utils.exceptions.tokens.InvalidTokenException
+   * @throws utils.exceptions.tokens.InvalidTokenException cuando no puedes dar de baja
    */
   @Test
   public void testBaja() throws InvalidTokenException {
@@ -119,7 +120,7 @@ public class ServLocalTest {
   /**
    * Test of agregar method, of class ServLocal.
    *
-   * @throws java.lang.Exception
+   * @throws java.lang.Exception error al agregar
    */
   @Test
   public void testAgregar() throws Exception {
@@ -150,7 +151,7 @@ public class ServLocalTest {
   /**
    * Test of eliminar method, of class ServLocal.
    *
-   * @throws java.lang.Exception
+   * @throws java.lang.Exception error al eliminar
    */
   @Test
   public void testEliminar() throws Exception {
@@ -172,8 +173,8 @@ public class ServLocalTest {
 
   /**Java Doc.
    *
-   * @throws ContentNotFoundException
-   * @throws InvalidTokenException
+   * @throws ContentNotFoundException contenido no valido
+   * @throws InvalidTokenException token no valido
    */
   @Test(expected = ContentNotFoundException.class)
   public void testEliminarContenidoNotExist() throws
@@ -191,7 +192,7 @@ public class ServLocalTest {
   /**
    * Test of buscar method, of class ServLocal.
    *
-   * @throws java.lang.Exception
+   * @throws java.lang.Exception excepcion al buscar
    */
   @Test
   public void testBuscar() throws Exception {
@@ -215,7 +216,7 @@ public class ServLocalTest {
 
   /**Java Doc.
    *
-   * @throws InvalidTokenException
+   * @throws InvalidTokenException token no valido
    */
   @Test(expected = InvalidTokenException.class)
   public void testBuscarTokenUseFinish() throws InvalidTokenException {
@@ -233,7 +234,7 @@ public class ServLocalTest {
 
   /**Java Doc.
    *
-   * @throws InvalidTokenException
+   * @throws InvalidTokenException error al buscar publicidad
    */
   public void testBuscarPubl() throws InvalidTokenException {
     ServLocal servidor = new ServLocal("Paquito 1");

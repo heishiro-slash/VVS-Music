@@ -63,7 +63,7 @@ public class Canciones implements Contenido {
    * @param subcadena Palabra clave por la que se desea realizar la busqueda
    * @return Lista de contenido con la canción que concuerda con la palabra
    * clave
-   * @throws TitleNotFoundException Error mostrado en caso de que no haya
+    *@throws TitleNotFoundException Error mostrado en caso de que no haya
    * coincidencia con la palabra clave
    */
   @Override
