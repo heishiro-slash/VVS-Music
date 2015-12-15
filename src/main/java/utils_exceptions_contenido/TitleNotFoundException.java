@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils.exceptions.contenido;
+package utils_exceptions_contenido;
 
 /**
  *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
-public class ContentEmisoraNotFoundException extends Exception {
+public class TitleNotFoundException extends Exception {
 
     /**
      *
-     * @param message Mensaje que se mostrará indicando el error concreto que se produjo
+     * @param message Mensaje que se mostrará indicando el error concreto que se
+     * produjo
      */
-    public ContentEmisoraNotFoundException(String message) {
+    public TitleNotFoundException(String message) {
         super(message);
     }
 }

@@ -3,25 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidorTest;
+package servidor_test;
 
 import servidor.ServLocal;
 import contenido.Anuncios;
 import contenido.Canciones;
 import contenido.Contenido;
-import servidor.Tokens.AdminToken;
-import utils.exceptions.tokens.InvalidTokenException;
-import servidor.Tokens.Token;
+import servidor_tokens.AdminToken;
+import utils_exceptions_tokens.InvalidTokenException;
+import servidor_tokens.Token;
 import java.util.List;
-import java.util.Random;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import servidor.Utils.AdminTokenTest;
-import utils.exceptions.contenido.ContentNotFoundException;
+import utils_exceptions_contenido.ContentNotFoundException;
 
 /**
  *
@@ -93,8 +91,7 @@ public class ServLocalTest {
     /**
      * Test of baja method, of class ServLocal.
      *
-     * @throws Servidor.Utils.InvalidTokenException eliminar un token (que no es
-     * reducir su capacidad, sino borrarlo)
+     * @throws utils_exceptions_tokens.InvalidTokenException
      */
     @Test
     public void testBaja() throws InvalidTokenException {
@@ -122,6 +119,7 @@ public class ServLocalTest {
 
     /**
      * Test of agregar method, of class ServLocal.
+     * @throws java.lang.Exception
      */
     @Test
     public void testAgregar() throws Exception {
@@ -151,6 +149,7 @@ public class ServLocalTest {
 //    }
     /**
      * Test of eliminar method, of class ServLocal.
+     * @throws java.lang.Exception
      */
     @Test
     public void testEliminar() throws Exception {
@@ -170,8 +169,14 @@ public class ServLocalTest {
         assertEquals(lista.size(), 0);
     }
 
+    /**
+     *
+     * @throws ContentNotFoundException
+     * @throws InvalidTokenException
+     */
     @Test(expected = ContentNotFoundException.class)
-    public void testEliminarContenidoNotExist() throws ContentNotFoundException, InvalidTokenException {
+    public void testEliminarContenidoNotExist() throws
+            ContentNotFoundException, InvalidTokenException {
 
         ServLocal servidor = new ServLocal("Paquito 2");
         AdminToken admin = AdminToken.getInstance();
@@ -184,6 +189,7 @@ public class ServLocalTest {
 
     /**
      * Test of buscar method, of class ServLocal.
+     * @throws java.lang.Exception
      */
     @Test
     public void testBuscar() throws Exception {
@@ -205,6 +211,10 @@ public class ServLocalTest {
         assertEquals(lista.size(), 6);
     }
 
+    /**
+     *
+     * @throws InvalidTokenException
+     */
     @Test(expected = InvalidTokenException.class)
     public void testBuscarTokenUseFinish() throws InvalidTokenException {
         ServLocal servidor = new ServLocal("Paquito 1");
@@ -219,6 +229,10 @@ public class ServLocalTest {
 
     }
 
+    /**
+     *
+     * @throws InvalidTokenException
+     */
     public void testBuscarPubl() throws InvalidTokenException {
         ServLocal servidor = new ServLocal("Paquito 1");
         AdminToken admin = AdminToken.getInstance();

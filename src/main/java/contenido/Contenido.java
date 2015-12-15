@@ -5,8 +5,8 @@
  */
 package contenido;
 
-import utils.exceptions.contenido.ContentEmisoraNotFoundException;
-import utils.exceptions.contenido.TitleNotFoundException;
+import utils_exceptions_contenido.ContentEmisoraNotFoundException;
+import utils_exceptions_contenido.TitleNotFoundException;
 import java.util.List;
 
 /**
@@ -36,23 +36,28 @@ public interface Contenido {
     /**
      *
      * @param subcadena Palabra clave por la que se desea realizar la busqueda
-     * @return Lista de contenido con los elementos que concuerden con la palabra clave
-     * @throws TitleNotFoundException Error mostrado cuando no encuentra el contenido
+     * @return Lista de contenido con los elementos que concuerden con la
+     * palabra clave
+     * @throws TitleNotFoundException Error mostrado cuando no encuentra el
+     * contenido
      */
-    public List<Contenido> buscar (String subcadena)throws TitleNotFoundException;
+    public List<Contenido> buscar(String subcadena) throws TitleNotFoundException;
 
     /**
      *
      * @param contenido Elemento que se desea añadir a la lista de reproducción
      * @param predecesor Elemento a partir del cual se desea añadir el contenido
-     * @throws ContentEmisoraNotFoundException Contenido no encontrado en la emisora
+     * @throws ContentEmisoraNotFoundException Contenido no encontrado en la
+     * emisora
      */
-    public void agregar (Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException;
+    public void agregar(Contenido contenido, Contenido predecesor) 
+            throws ContentEmisoraNotFoundException;
 
     /**
      *
      * @param contenido Elemento que se desea quitar de la lista de reproducción
-     * @throws ContentEmisoraNotFoundException Contenido no encontrado en la emisora
+     * @throws ContentEmisoraNotFoundException Contenido no encontrado en la
+     * emisora
      */
-    public void eliminar (Contenido contenido) throws ContentEmisoraNotFoundException;
+    public void eliminar(Contenido contenido) throws ContentEmisoraNotFoundException;
 }

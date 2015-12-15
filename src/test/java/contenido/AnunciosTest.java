@@ -5,17 +5,15 @@
  */
 package contenido;
 
-import contenido.Contenido;
-import contenido.Anuncios;
-import utils.exceptions.contenido.TitleNotFoundException;
+import utils_exceptions_contenido.TitleNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -23,32 +21,27 @@ import static org.junit.Assert.*;
  */
 public class AnunciosTest {
 
-   
     public AnunciosTest() {
     }
 
-   
     @BeforeClass
     public static void setUpClass() {
     }
 
-    
     @AfterClass
     public static void tearDownClass() {
     }
 
-  
     @Before
     public void setUp() {
     }
 
-  
     @After
     public void tearDown() {
     }
 
     /**
-     *Caso base: obtener el titulo de un anuncio previamente creado.
+     * Caso base: obtener el titulo de un anuncio previamente creado.
      */
     @Test
     public void testObtenerTitulo() {
@@ -61,7 +54,7 @@ public class AnunciosTest {
     }
 
     /**
-    *Caso base: obtener la duracion de un anuncio previamente creado
+     * Caso base: obtener la duracion de un anuncio previamente creado
      */
     @Test
     public void testObtenerDuracion() {
@@ -73,7 +66,8 @@ public class AnunciosTest {
     }
 
     /**
-    *Caso base: obtener la lista de reproduccion de un anuncio previamente creado
+     * Caso base: obtener la lista de reproduccion de un anuncio previamente
+     * creado
      */
     @Test
     public void testObtenerListaReproduccion() {
@@ -89,9 +83,8 @@ public class AnunciosTest {
 
     /**
      *
-     * @throws TitleNotFoundException
-     * Buscar un anuncio previamente creado
-
+     * @throws TitleNotFoundException Buscar un anuncio previamente creado
+     *
      */
     @Test
     public void testBuscar() throws TitleNotFoundException {
@@ -102,13 +95,12 @@ public class AnunciosTest {
         assertEquals(expResult, anuncio.obtenerListaReproduccion());
 
     }
-    
+
     /**
      *
-     * @throws TitleNotFoundException
-     * Buscar un anuncio que no existe
+     * @throws TitleNotFoundException Buscar un anuncio que no existe
      */
-    @Test (expected = TitleNotFoundException.class)
+    @Test(expected = TitleNotFoundException.class)
     public void testBuscarNotFound() throws TitleNotFoundException {
 
         Anuncios anuncio = new Anuncios();

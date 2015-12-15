@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidor.Tokens;
+package servidor_tokens;
 
 import java.util.Objects;
 import java.util.UUID;
 
 /**
  * Token de administrador, Singleton.
+ *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class AdminToken {
+
     private static AdminToken admin = null;
-    private static String uuid; 
-    private AdminToken(){
+    private static String uuid;
+
+    private AdminToken() {
         uuid = UUID.randomUUID().toString();
     }
 
@@ -23,8 +26,8 @@ public class AdminToken {
      *
      * @return
      */
-    public static AdminToken getInstance(){
-        if(admin == null){
+    public static AdminToken getInstance() {
+        if (admin == null) {
             admin = new AdminToken();
         }
         return admin;
@@ -34,7 +37,7 @@ public class AdminToken {
      *
      * @return
      */
-    public static String getUUID(){
+    public static String getUuid() {
         return uuid;
     }
 
@@ -61,6 +64,9 @@ public class AdminToken {
         return true;
     }
 
+    public int hashCode(){
+        return 42;
+    }
     /**
      *
      * @return
@@ -69,5 +75,5 @@ public class AdminToken {
     public String toString() {
         return "AdminToken{" + uuid + '}';
     }
-    
+
 }

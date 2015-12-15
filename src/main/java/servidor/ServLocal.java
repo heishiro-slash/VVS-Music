@@ -6,11 +6,11 @@
 package servidor;
 
 import contenido.Anuncios;
-import servidor.Tokens.Token;
+import servidor_tokens.Token;
 import contenido.Contenido;
-import servidor.Tokens.AdminToken;
-import utils.exceptions.contenido.ContentNotFoundException;
-import utils.exceptions.tokens.InvalidTokenException;
+import servidor_tokens.AdminToken;
+import utils_exceptions_contenido.ContentNotFoundException;
+import utils_exceptions_tokens.InvalidTokenException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -118,7 +118,8 @@ public class ServLocal implements Servidor {
      * @throws ContentNotFoundException
      */
     @Override
-    public void eliminar(Contenido contenido, AdminToken token) throws InvalidTokenException, ContentNotFoundException {
+    public void eliminar(Contenido contenido, AdminToken token) throws 
+            InvalidTokenException, ContentNotFoundException {
         if (token.equals(admin)) {
             if (catalogo.contains(contenido)) {
                 catalogo.remove(contenido);

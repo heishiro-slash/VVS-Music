@@ -3,19 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils.exceptions.tokens;
+package utils_exceptions_tokens;
 
-import servidor.Tokens.AdminToken;
-import servidor.Tokens.Token;
+import servidor_tokens.AdminToken;
+import servidor_tokens.Token;
 
 /**
  * Excepcion lanzada cuando un token es invalido o esta caducado.
+ *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
 public class InvalidTokenException extends Exception {
 
     /**
      * Excepcion para token normal.
+     *
      * @param token
      */
     public InvalidTokenException(Token token) {
@@ -24,6 +26,7 @@ public class InvalidTokenException extends Exception {
 
     /**
      * Excepcion para un Token de administrador.
+     *
      * @param token
      */
     public InvalidTokenException(AdminToken token) {

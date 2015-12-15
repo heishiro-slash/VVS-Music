@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidor.Utils;
+package servidor_utils;
 
-import servidor.Tokens.AdminToken;
+import servidor_tokens.AdminToken;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertFalse;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import servidor.Tokens.Token;
+import servidor_tokens.Token;
 
 /**
  *
@@ -67,9 +67,9 @@ public class AdminTokenTest {
     }
 
     @Test
-    public void testGetUUID() {
+    public void testGetUuid() {
         // AdminToken admin = AdminToken.getInstance();
-        String uuid = AdminToken.getUUID();
+        String uuid = AdminToken.getUuid();
 
     }
 
@@ -80,6 +80,6 @@ public class AdminTokenTest {
         assertFalse(admin.equals(null));
         Token token = new Token();
         assertFalse(admin.equals(token));
-        
+
     }
 }

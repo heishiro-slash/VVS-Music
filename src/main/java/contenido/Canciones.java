@@ -5,7 +5,8 @@
  */
 package contenido;
 
-import utils.exceptions.contenido.TitleNotFoundException;
+import utils_exceptions_contenido.TitleNotFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,28 +14,28 @@ import java.util.List;
  *
  * @author Faustino Castro, Victor Blanco y José Miguel del Río
  */
-public class Canciones  implements Contenido{
-    
+public class Canciones implements Contenido {
+
     private String titulo;
     private int duracion;
-    
+
     /**
      *
      * @param tit Titulo de la canción
      * @param dur Duración de la canción
      */
-    public Canciones(String tit,int dur) {
-        this.titulo=tit;
-        this.duracion=dur;
+    public Canciones(String tit, int dur) {
+        this.titulo = tit;
+        this.duracion = dur;
     }
-    
+
     /**
      *
      * @return Titulo de la canción
      */
     @Override
     public String obtenerTitulo() {
-          return this.titulo;
+        return this.titulo;
     }
 
     /**
@@ -52,7 +53,7 @@ public class Canciones  implements Contenido{
      */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
-        List<Contenido>lista = new ArrayList<Contenido>();
+        List<Contenido> lista = new ArrayList<Contenido>();
         lista.add(this);
         return lista;
     }
@@ -60,24 +61,27 @@ public class Canciones  implements Contenido{
     /**
      *
      * @param subcadena Palabra clave por la que se desea realizar la busqueda
-     * @return Lista de contenido con la canción que concuerda con la palabra clave
-     * @throws TitleNotFoundException Error mostrado en caso de que no haya coincidencia con la palabra clave
+     * @return Lista de contenido con la canción que concuerda con la palabra
+     * clave
+     * @throws TitleNotFoundException Error mostrado en caso de que no haya
+     * coincidencia con la palabra clave
      */
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
-        List<Contenido>lista = new ArrayList<Contenido>();
-        
-        if (this.titulo.contains(subcadena)){
+        List<Contenido> lista = new ArrayList<Contenido>();
+
+        if (this.titulo.contains(subcadena)) {
             lista.add(this);
             return lista;
-        }else {
-           throw new TitleNotFoundException("Cancion no encontrada");
+        } else {
+            throw new TitleNotFoundException("Cancion no encontrada");
         }
     }
 
     /**
      * Método no disponible
-     * @param contenido 
+     *
+     * @param contenido
      * @param predecesor
      */
     @Override  //Esto es un metodo vacio
@@ -86,10 +90,11 @@ public class Canciones  implements Contenido{
 
     /**
      * Método no disponible
-     * @param contenido 
+     *
+     * @param contenido
      */
     @Override  //Esto es un metodo vacio
     public void eliminar(Contenido contenido) {
     }
-    
+
 }

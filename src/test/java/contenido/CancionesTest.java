@@ -5,9 +5,7 @@
  */
 package contenido;
 
-import contenido.Contenido;
-import contenido.Canciones;
-import utils.exceptions.contenido.TitleNotFoundException;
+import utils_exceptions_contenido.TitleNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
@@ -19,7 +17,7 @@ import static org.junit.Assert.*;
 
 /**
  * * @authors: Víctor Blanco, Faustino Castro, Jose Del Río
-
+ *
  */
 public class CancionesTest {
 
@@ -29,12 +27,10 @@ public class CancionesTest {
     public CancionesTest() {
     }
 
-
     @BeforeClass
     public static void setUpClass() {
     }
 
- 
     @AfterClass
     public static void tearDownClass() {
     }
@@ -43,14 +39,13 @@ public class CancionesTest {
     public void setUp() {
     }
 
-
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of obtenerTitulo method, of class Canciones.
-     * Crear una cancion y obtener su titulo
+     * Test of obtenerTitulo method, of class Canciones. Crear una cancion y
+     * obtener su titulo
      */
     @Test
     public void testObtenerTitulo() {
@@ -62,8 +57,8 @@ public class CancionesTest {
     }
 
     /**
-     * Test of obtenerDuracion method, of class Canciones.
-     * Crear una cancion y obtener su duracion
+     * Test of obtenerDuracion method, of class Canciones. Crear una cancion y
+     * obtener su duracion
      */
     @Test
     public void testObtenerDuracion() {
@@ -74,8 +69,8 @@ public class CancionesTest {
     }
 
     /**
-     * Test of obtenerListaReproduccion method, of class Canciones.
-     * Crear una cancion y obtener su lista de reproduccion
+     * Test of obtenerListaReproduccion method, of class Canciones. Crear una
+     * cancion y obtener su lista de reproduccion
      */
     @Test
     public void testObtenerListaReproduccion() {
@@ -90,8 +85,8 @@ public class CancionesTest {
 
     /**
      * Test of buscar method, of class Canciones.
-     * @throws java.lang.Exception
-     * Buscar una cancion previamente creada
+     *
+     * @throws java.lang.Exception Buscar una cancion previamente creada
      */
     @Test
     public void testBuscar() throws Exception {
@@ -103,10 +98,9 @@ public class CancionesTest {
 
     /**
      *
-     * @throws TitleNotFoundException
-     * buscar una cancion que no existe
+     * @throws TitleNotFoundException buscar una cancion que no existe
      */
-    @Test (expected = TitleNotFoundException.class)
+    @Test(expected = TitleNotFoundException.class)
     public void testBuscarNotFound() throws TitleNotFoundException {
 
         Canciones cancion = new Canciones("cancion1", 10);

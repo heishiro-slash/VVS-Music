@@ -5,8 +5,8 @@
  */
 package contenido;
 
-import utils.exceptions.contenido.ContentEmisoraNotFoundException;
-import utils.exceptions.contenido.TitleNotFoundException;
+import utils_exceptions_contenido.ContentEmisoraNotFoundException;
+import utils_exceptions_contenido.TitleNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +22,7 @@ public class Emisoras implements Contenido {
 
     /**
      * Se crea una emisora
+     *
      * @param tit Titulo de la emisora
      */
     public Emisoras(String tit) {
@@ -42,8 +43,8 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @return Duración de la emisora.
-     * La duración es la suma de todas las duraciones que contenga la lista de dicha emisora
+     * @return Duración de la emisora. La duración es la suma de todas las
+     * duraciones que contenga la lista de dicha emisora
      */
     @Override
     public int obtenerDuracion() {
@@ -52,7 +53,8 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @return Lista de reproducción con los anuncios o canciones que previamente se han añadido a la lista.
+     * @return Lista de reproducción con los anuncios o canciones que
+     * previamente se han añadido a la lista.
      */
     @Override
     public List<Contenido> obtenerListaReproduccion() {
@@ -62,16 +64,18 @@ public class Emisoras implements Contenido {
     /**
      *
      * @param subcadena Palabra clave por la que se desea realizar la busqueda
-     * @return Lista de contenido  los anuncios o canciones que concuerde con la palabra clave
-     * @throws TitleNotFoundException Error mostrado en caso de que no haya coincidencia con la palabra clave o la lista esté sin contenido.
+     * @return Lista de contenido los anuncios o canciones que concuerde con la
+     * palabra clave
+     * @throws TitleNotFoundException Error mostrado en caso de que no haya
+     * coincidencia con la palabra clave o la lista esté sin contenido.
      */
     @Override
     public List<Contenido> buscar(String subcadena) throws TitleNotFoundException {
 
-        if (lista.isEmpty() ){
+        if (lista.isEmpty()) {
             throw new TitleNotFoundException("Lista sin contenidos");
         }
-                    
+
         List<Contenido> listaContenido = new ArrayList();
 
         for (Contenido contenido : lista) {
@@ -91,10 +95,12 @@ public class Emisoras implements Contenido {
      *
      * @param contenido Elemento que se desea añadir a la lista de reproducción
      * @param predecesor Elemento a partir del cual se desea añadir el contenido
-     * @throws ContentEmisoraNotFoundException Error mostrado en caso de ausencia de predecesor o de que no sea valido.
+     * @throws ContentEmisoraNotFoundException Error mostrado en caso de
+     * ausencia de predecesor o de que no sea valido.
      */
     @Override
-    public void agregar(Contenido contenido, Contenido predecesor) throws ContentEmisoraNotFoundException {
+    public void agregar(Contenido contenido, Contenido predecesor) throws 
+            ContentEmisoraNotFoundException {
         int indice;
 
         if (lista.isEmpty()) {
@@ -116,8 +122,10 @@ public class Emisoras implements Contenido {
 
     /**
      *
-     * @param contenido Elemento que se desea eliminar de la lista de reproducción
-     * @throws ContentEmisoraNotFoundException Error mostrado en caso de contenido no existente.
+     * @param contenido Elemento que se desea eliminar de la lista de
+     * reproducción
+     * @throws ContentEmisoraNotFoundException Error mostrado en caso de
+     * contenido no existente.
      */
     @Override
     public void eliminar(Contenido contenido) throws ContentEmisoraNotFoundException {

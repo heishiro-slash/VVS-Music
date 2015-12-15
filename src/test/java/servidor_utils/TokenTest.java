@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidor.Utils;
+package servidor_utils;
 
-import servidor.Tokens.Token;
+import servidor_tokens.Token;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import servidor.Tokens.AdminToken;
+import servidor_tokens.AdminToken;
 
 /**
  *

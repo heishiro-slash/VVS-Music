@@ -3,19 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidorTest;
+package servidor_test;
 
 import servidor.ServRespaldo;
-import contenido.Contenido;
-import servidor.Tokens.Token;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import servidor.ServLocal;
 
 /**
  *
@@ -84,5 +80,4 @@ public class ServRespaldoTest {
 //        List<Contenido> lista = servidor.buscar("cho", null);
 //        //assertEquals(lista, 0);
 //    }
-
 }
