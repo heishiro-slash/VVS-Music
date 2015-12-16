@@ -142,7 +142,7 @@ public class SimpleTest extends ExecutionContext implements VVSMusic {
             .execute();
     }
 
-    @Test
+ //   @Test
     public void runFunctionalTest() {
         new TestBuilder()
             .setModel(MODEL_PATH)
@@ -152,7 +152,7 @@ public class SimpleTest extends ExecutionContext implements VVSMusic {
             .execute();
     }
 
-    @Test
+ //   @Test
     public void runStabilityTest() {
         new TestBuilder()
             .setModel(MODEL_PATH)
