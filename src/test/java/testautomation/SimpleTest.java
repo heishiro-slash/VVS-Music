@@ -152,12 +152,12 @@ public class SimpleTest extends ExecutionContext implements VVSMusic {
             .execute();
     }
 
- //   @Test
+    @Test
     public void runStabilityTest() {
         new TestBuilder()
             .setModel(MODEL_PATH)
             .setContext(new SimpleTest())
-            .setPathGenerator(new RandomPath(new TimeDuration(3, TimeUnit.MINUTES))) // atravesamos aleatoriamente o grafo durante 3 minutos
+            .setPathGenerator(new RandomPath(new TimeDuration(30, TimeUnit.SECONDS))) // atravesamos aleatoriamente o grafo durante 3 minutos
             .setStart("e_start_the_program") // primeira chamada
             .execute();
     }
