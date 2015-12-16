@@ -53,14 +53,7 @@
             <artifactId>cobertura</artifactId>
             <version>1.9.4.1</version>
         </dependency>
-<<<<<<< HEAD
-        <dependency>
-            <groupId>net.java.quickcheck</groupId>
-            <artifactId>quickcheck</artifactId>
-            <version>0.6</version>
-            <scope>test</scope>
-=======
-	<dependency>
+		<dependency>
             <groupId>org.graphwalker</groupId>
             <artifactId>graphwalker-core</artifactId>
             <version>${graphwalker.version}</version>
@@ -84,7 +77,6 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.1.2</version>
->>>>>>> feature/GraphWalker
         </dependency>
     </dependencies>
     <reporting>
