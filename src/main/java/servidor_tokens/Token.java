@@ -46,6 +46,10 @@ public class Token {
         return "Token{" + "uuid=" + uuid + '}';
     }
 
+    public int getCaducidad() {
+        return caducidad;
+    }
+
     /**
      * Funcion que devuelve el Hash del token
      *
