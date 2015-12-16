@@ -25,9 +25,9 @@ import org.graphwalker.java.test.TestBuilder;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import servidor.ServLocal;
-import servidor_tokens.AdminToken;
-import servidor_tokens.Token;
-import utils_exceptions_tokens.InvalidTokenException;
+import servidor.tokens.AdminToken;
+import servidor.tokens.Token;
+import utils.exceptions.tokens.InvalidTokenException;
 
 /**
  *

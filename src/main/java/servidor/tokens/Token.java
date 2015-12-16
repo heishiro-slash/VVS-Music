@@ -82,4 +82,8 @@ public class Token {
     return true;
   }
 
+    public int getCaducidad() {
+        return caducidad;
+    }
+
 }
